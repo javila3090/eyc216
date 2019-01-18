@@ -2,24 +2,26 @@
 
 @section('content')
 
-@include('partials.banner')
 
 <!-- ##### Course Area Start ##### -->
+<br>
+<br>
+<br>
+<br>
 @if($secondary)
 <div class="cryptos-feature-area section-padding-100-70">
-
-    <div class="container-fluid">
+    <div class="container-fluid main-text">
         <div class="row">
             <div class="col-12 col-md-12">
-                <div class="section-heading mx-auto">
-                    <h3 class="text-center">{{$secondary->title}}</h3>
+                <div class="section-heading mx-auto wow fadeInDown">
+                    <h3 class="text-center"><b>{{$secondary->title}}</b></h3>
                     <div class="heading-line"></div>
                 </div>
             </div>
         </div>
         @if($secondary->content && !$secondary->image)
         <div class="row">
-            <div class="col-12 col-md-12 text-justify wow bounceInUp">
+            <div class="col-12 col-md-12 text-justify wow fadeInUp">
                 <div class="size-18px">{!!$secondary->content!!}</div>
             </div>
         </div>
@@ -35,33 +37,6 @@
         </div>
         <br>
         @endif
-        <div class="row">
-            @php
-            $i = 1;
-            @endphp
-            @foreach($secondaryBanner as $v)
-            <!-- Single Course Area -->
-            <div class="col-12 col-md-6 col-xl-3">
-                <div class="guideline-content">
-                    <!-- Single Step -->
-                    <div class="single-step d-flex">
-                        <div class="quantity">{{$i}}</div>
-                    </div>
-                </div>
-                <div class="single-feature-area mb-30 text-center wow rollIn box-shadow size-16px">
-                    @if($v->icon)
-                    <i class="{{$v->icon->name}}"></i>
-                    @endif
-                    <h3>{!!$v->title!!}</h3>
-                    <div class="heading-line"></div>
-                    <p>{!!$v->caption!!}</p>
-                </div>
-            </div>
-            @php
-            $i++;
-            @endphp
-            @endforeach
-        </div>
     </div>
 </div>
 @endif
@@ -167,68 +142,4 @@
     </div>
 </section>-->
 <!-- ##### Currency Area End ##### -->
-
-<!-- ##### Blog Area Start ##### -->
-<section class="cryptos-blog-area section-padding-100-50">
-    <div class="container-fluid">
-        <div class="row">
-            @if($team)
-            <div class="col-md-6 col-12">
-                <div class="row">
-                    <div class="section-heading text-center mx-auto">
-                        <h3>{{$team->title}}</h3>
-                        <div class="heading-line"></div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 col-md-10 offset-md-1 text-center wow bounceInRight">
-                        <img src="{{$team->image}}" class="img rounded"/>
-                    </div>
-                    <div class="col-12 col-md-10 offset-md-1 text-center wow bounceInLeft section-padding-30">
-                        <div class="size-14px">{!!$team->content!!}</div>
-                    </div>
-                </div>
-            </div>
-            @endif
-            @if($whyus)
-            <div class="col-md-6 col-12 resp-padding-30-0">
-                <div class="row">
-                    <div class="section-heading text-center mx-auto">
-                        <h3>{{$whyus->title}}</h3>
-                        <div class="heading-line"></div>
-                    </div>
-                </div>
-                @if($whyusBanners)
-                <div class="row">
-                    <div class="col-12 col-md-10 offset-md-1 text-justify wow bounceInLeft">
-                        <div class="accordions mb-100" id="accordion" role="tablist" aria-multiselectable="true">
-                            @php
-                            $i = 1;
-                            @endphp
-                            @foreach($whyusBanners as $v)
-                            <!-- Single Accordian Area -->
-                            <div class="panel single-accordion">
-                                <h6><a role="button" class="{{$i==1 ? '' : 'collapsed'}}" aria-expanded="true" aria-controls="collapseOne" data-toggle="collapse" data-parent="#accordion" href="#collapse{{$i}}">{{$v->title}}
-                                    <span class="accor-open"><i class="fa fa-plus" aria-hidden="true"></i></span>
-                                    <span class="accor-close"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                </a></h6>
-                                <div id="collapse{{$i}}" class="accordion-content collapse {{$i==1 ? 'show' : ''}}">
-                                    {!!$v->caption!!}
-                                </div>
-                            </div>
-                            @php $i++; @endphp
-                            @endforeach
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-10 offset-md-1 text-center wow bounceInLeft section-padding-30">
-                        <div class="size-14px">{!!$whyus->content!!}</div>
-                    </div>
-                </div>
-                @endif
-            </div>
-            @endif
-        </div>
-    </div>
-</section>
-<!-- ##### Blog Area End ##### -->
 @endsection

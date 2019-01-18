@@ -15977,6 +15977,8 @@ img {
   color: #565656;
   display: inline-block;
   margin-right: 30px;
+  width: 105px !important;
+  margin-top: 10px !important;
 }
 
 .classynav ul li {
@@ -16295,9 +16297,9 @@ img {
 }
 
 .breakpoint-off .classynav ul li .dropdown {
-  width: 210px;
+  width: 300px;
   position: absolute;
-  background-color: #fff;
+  background-color: #333;
   top: 120%;
   left: 0;
   z-index: 100;
@@ -17266,7 +17268,7 @@ img {
 }
 
 .bg-overlay::after {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.2);
   position: absolute;
   z-index: -1;
   top: 0;
@@ -17475,11 +17477,11 @@ textarea:focus {
   width: 100%;
   z-index: 100;
   height: 125px;
-  background-color: #fff;
+  background-color: #333;
   text-transform: uppercase !important;
   color: #fff !important;
-  border-top: 7px solid #3599db;
-  border-bottom: 3px solid #3599db;
+  -webkit-box-shadow: 0 5px 70px rgba(0, 0, 0, 0.55);
+          box-shadow: 0 5px 70px rgba(0, 0, 0, 0.55);
 }
 
 @media only screen and (max-width: 767px) {
@@ -17510,27 +17512,27 @@ textarea:focus {
 }
 
 .header-area .cryptos-main-menu .classy-navbar .classynav ul li a {
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.5px;
-  color: #656565;
+  color: #fff;
   text-transform: uppercase;
 }
 
 .header-area .cryptos-main-menu .classy-navbar .classynav ul li a:hover, .header-area .cryptos-main-menu .classy-navbar .classynav ul li a:focus {
-  color: #3599db;
+  color: grey;
 }
 
-.header-area .cryptos-main-menu breakpoint-off .classynav ul li .dropdown {
-  background-color: #fff !important;
+.header-area .cryptos-main-menu .breakpoint-off .classynav ul li .dropdown {
+  /*background-color: #fff !important;*/
   top: 120%;
 }
 
 .header-area .cryptos-main-menu .classynav ul li .dropdown li a,
 .header-area .cryptos-main-menu .classynav ul li .megamenu li a {
-  font-size: 12px;
-  background-color: #fff;
-  border-bottom: 1px solid #3599db;
+  font-size: 10px;
+  background-color: #333;
+  border-bottom: 1px solid #888;
 }
 
 .header-area .cryptos-main-menu .classynav .header-newsletter-form {
@@ -17695,7 +17697,7 @@ textarea:focus {
 }
 
 .hero-slides .single-hero-slide h2 span {
-  color: #3599db;
+  color: grey;
 }
 
 .hero-slides .single-hero-slide h6 {
@@ -17775,7 +17777,11 @@ textarea:focus {
   z-index: 1;
   padding-left: 45px;
   padding-right: 45px;
-  border-bottom: 3px solid #3599db;
+  background-image: url("/img/logo-opacity.png") !important;
+  background-position: center !important;
+  background-repeat: no-repeat;
+  background-size: 20%;
+  min-height: 500px;
 }
 
 @media only screen and (max-width: 767px) {
@@ -17927,7 +17933,7 @@ textarea:focus {
 .currency-calculator .calculator-first-part input {
   width: 85px;
   height: 53px;
-  border: 2px solid #3599db;
+  border: 2px solid grey;
   border-radius: 0;
   margin-right: 12px;
   background-color: transparent;
@@ -18044,6 +18050,14 @@ textarea:focus {
 }
 
 /* :: About Area CSS */
+.about-content {
+  background-image: url("/img/logo-opacity.png") !important;
+  background-position: center !important;
+  background-repeat: no-repeat;
+  background-size: 20%;
+  min-height: 250px;
+}
+
 .about-content p {
   text-align: justify !important;
   line-height: 2;
@@ -18112,7 +18126,7 @@ textarea:focus {
 }
 
 .single-blog-area .blog-content .post-title:hover {
-  color: #3599db;
+  color: grey;
 }
 
 .single-blog-area .blog-content p {
@@ -18133,7 +18147,7 @@ textarea:focus {
 }
 
 .single-blog-area .blog-content .meta-data a:first-child, .single-blog-area .blog-content .meta-data a:hover {
-  color: #3599db;
+  color: grey;
 }
 
 .single-blog-area.blog-style-2 .blog-thumbnail {
@@ -18168,7 +18182,7 @@ textarea:focus {
 
 .blog-section-heading h3 {
   font-size: 30px;
-  border-bottom: 3px solid #3599db;
+  border-bottom: 3px solid grey;
   display: inline-block;
   line-height: 1.5;
 }
@@ -18348,7 +18362,7 @@ textarea:focus {
   z-index: 10;
   font-size: 14px;
   text-transform: uppercase;
-  color: #3599db;
+  color: grey;
   font-family: "Lato Regular", sans-serif;
   line-height: 1;
   font-weight: 700;
@@ -18410,7 +18424,7 @@ textarea:focus {
 }
 
 .main-footer-area .footer-widget .footer-social-info a:hover, .main-footer-area .footer-widget .footer-social-info a:focus {
-  color: #3599db;
+  color: grey;
 }
 
 .main-footer-area .footer-widget .single--blog-post {
@@ -18431,7 +18445,7 @@ textarea:focus {
 }
 
 .main-footer-area .footer-widget .single--blog-post a:hover {
-  color: #3599db;
+  color: grey;
 }
 
 .main-footer-area .footer-widget .single--blog-post a p {
@@ -18441,13 +18455,13 @@ textarea:focus {
 }
 
 .main-footer-area .footer-widget .single--blog-post a p:hover {
-  color: #3599db;
+  color: grey;
 }
 
 .main-footer-area .footer-widget .single--blog-post span {
   margin-bottom: 0;
   font-size: 14px;
-  color: #3599db;
+  color: grey;
 }
 
 .main-footer-area .footer-widget .useful-links li {
@@ -18468,7 +18482,7 @@ textarea:focus {
 }
 
 .main-footer-area .footer-widget .useful-links li a:hover, .main-footer-area .footer-widget .useful-links li a:focus {
-  color: #3599db;
+  color: grey;
 }
 
 .bottom-footer-area {
@@ -18491,7 +18505,7 @@ textarea:focus {
 }
 
 .bottom-footer-area p a:hover {
-  color: #3599db;
+  color: grey;
 }
 
 /* :: 12.0 Breadcumb Area CSS */
@@ -18520,7 +18534,7 @@ textarea:focus {
   font-family: 'Sahitya Bold' !important;
   letter-spacing: 1px;
   margin-bottom: 0;
-  color: #144E75;
+  color: #000;
   text-transform: uppercase;
 }
 
@@ -18648,29 +18662,6 @@ textarea:focus {
 }
 
 /* :: 14.0 Contact Area CSS */
-
-.map-container {
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    padding-bottom: calc(50% - 60px);
-}
-
-.map-container-quote {
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 350px;
-    padding-bottom: calc(50% - 60px);
-}
-
-.map {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
 .map-area {
   position: relative;
   z-index: 2;
@@ -18685,17 +18676,10 @@ textarea:focus {
   .map-area #googleMap {
     height: 500px;
   }
-  .map-container {
-    height: 500px;
-  }
 }
 
 @media only screen and (max-width: 767px) {
   .map-area #googleMap {
-    height: 350px;
-  }
-
-  .map-container {
     height: 350px;
   }
 }
@@ -18739,13 +18723,13 @@ textarea:focus {
 }
 
 .contact-information .contact-social-info a:hover {
-  color: #3599db;
+  color: grey;
 }
 
 .contact-information .single-contact-info .contact-icon i {
   display: inline-block;
   color: #ffffff;
-  background-color: #3599db;
+  background-color: grey;
   width: 30px;
   height: 30px;
   text-align: center;
@@ -18774,7 +18758,7 @@ textarea:focus {
 }
 
 .contact-form-area .form-control:focus {
-  border-bottom: 3px solid #3599db;
+  border-bottom: 3px solid grey;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
@@ -18809,13 +18793,13 @@ textarea:focus {
 .single-cool-fact h3 {
   font-size: 48px;
   margin-bottom: 0;
-  color: #3599db;
+  color: grey;
 }
 
 .single-cool-fact .line {
   width: 35px;
   height: 5px;
-  background-color: #3599db;
+  background-color: grey;
   margin: 20px auto;
 }
 
