@@ -35,9 +35,10 @@
                         <nav>
                             <ul class="useful-links d-flex justify-content-between flex-wrap">
                                 <li><a href="/">Inicio</a></li>
-                                <li><a href="{{route('quote')}}">Cotizar</a></li>
-                                <li><a href="{{route('kinesiologist')}}">Aprende</a></li>
-                                <li><a href="{{route('videos')}}">Videos</a></li>
+                                <li><a href="{{route('kinesiologist')}}">Logia Celestial</a></li>
+                                <li><a href="{{route('aboutUs')}}">¿Qué es la Masonería?</a></li>
+                                <li><a href="{{route('videos')}}">Miembros</a></li>
+                                <li><a href="{{route('videos')}}">Canal Masónico</a></li>
                                 <li><a href="{{route('contact')}}">Contacto</a></li>
                             </ul>
                         </nav>
@@ -52,7 +53,7 @@
             <div class="row h-100 align-items-center justify-content-center">
                 <div class="col-12">
                     <p style="color: white;"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> @if(!empty($companyInfo)){{$companyInfo->name}}@else Vitamedica @endif | </i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> @if(!empty($companyInfo)){{$companyInfo->name}}@else Vitamedica @endif | </i> by <a href="https://wairadev.cl" target="_blank">Waira Dev</a>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </p>
                 </div>

@@ -28,19 +28,19 @@
                                     <li><a href="{{route('aboutUs')}}">¿Qué es la masonería?</a></li>
                                     <li><a href="#">Historia</a>
                                         <ul class="dropdown">
-                                            <li><a href="{{route('aboutUs')}}">Organización Gran Logia de Inglaterra</a></li>
-                                            <li><a href="{{route('requirements')}}">Sede Londres GL Unida de Inglaterra</a></li>
-                                            <li><a href="{{route('fonasa_isapre')}}">Fundadores de la Gran Logia de Inglaterra</a></li>
-                                            <li><a href="{{route('agreement')}}">Masonería Inglesa en el mundo</a></li>
-                                            <li><a href="{{route('agreement')}}">Masonería Inglesa en Chile</a></li>
-                                            <li><a href="{{route('agreement')}}">Masones destacados ingleses</a></li>
-                                            <li><a href="{{route('agreement')}}">Grandes masones de la historia</a></li>
+                                            <li><a href="{{route('page',2)}}">Organización Gran Logia de Inglaterra</a></li>
+                                            <li><a href="{{route('page',12)}}">Sede Londres GL Unida de Inglaterra</a></li>
+                                            <li><a href="{{route('page',5)}}">Fundadores de la Gran Logia de Inglaterra</a></li>
+                                            <li><a href="{{route('page',13)}}">Masonería Inglesa en el mundo</a></li>
+                                            <li><a href="{{route('page',15)}}">Masonería Inglesa en Chile</a></li>
+                                            <li><a href="{{route('page',16)}}">Masones destacados ingleses</a></li>
+                                            <li><a href="{{route('page',11)}}">Grandes masones de la historia</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="#">Rito de York</a>
                                         <ul class="dropdown">
-                                            <li><a href="{{route('aboutUs')}}">Diferencias rito inglés y escosés</a></li>
-                                            <li><a href="{{route('requirements')}}">Grados masónicos rito de york</a></li>
+                                            <li><a href="{{route('page',8)}}">Diferencias rito inglés y escosés</a></li>
+                                            <li><a href="{{route('page',6)}}">Grados masónicos rito de york</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="#">Noticias</a>

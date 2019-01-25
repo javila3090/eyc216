@@ -51,6 +51,8 @@ Route::get('/analytics/views', 'AnalyticsController@index')->name('analytics');
 
 Route::post('message/store', 'ContactController@store')->name('store_message');
 
+/*** Pages ***/
+Route::get('page/{type}', 'PageController@index')->name('page');
 
 Route::middleware(['auth'])->prefix('admin')->group(function () {
 
@@ -109,8 +111,6 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::get('agreements', 'AgreementController@index')->name('agreements');
     Route::get('agreements/show/{id}',['as'=>'show_agreement', 'uses' => 'AgreementController@show']);
     Route::get('agreements/destroy/{id}',['as'=>'destroy_agreement', 'uses' => 'AgreementController@destroy']);
-
-    /*** Analytics ***/
 
 });
 

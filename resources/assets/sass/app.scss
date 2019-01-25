@@ -1640,7 +1640,7 @@ textarea:focus {
 }
 
 .bottom-footer-area {
-    background-color: #090f1a;
+    background-color: $bg-default !important;
     text-align: center;
     height: 60px;
     p {

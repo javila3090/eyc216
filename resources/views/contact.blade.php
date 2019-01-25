@@ -17,51 +17,13 @@
 <!-- ##### Breadcumb Area End ##### -->
 
 <!-- ##### Contact Area Start ##### -->
-<section class="contact-area section-padding-100-0">
+<section class="contact-area section-padding-50-0">
     <div class="container">
         <div class="row">
-
-            <!-- Contact Information -->
-            <div class="col-12 col-lg-6">
-                <div class="contact-information mb-100">
-
-                    <!-- Single Contact Info -->
-                    <div class="single-contact-info d-flex">
-                        <div class="contact-icon mr-15">
-                            <i class="fa fa-map"></i>
-                        </div>
-                        <p>{!!$companyInfo->address!!}</p>
-                    </div>
-
-                    <!-- Single Contact Info -->
-                    <div class="single-contact-info d-flex">
-                        <div class="contact-icon mr-15">
-                            <i class="fa fa-phone"></i>
-                        </div>
-                        <p>{!!$companyInfo->phone_1!!} @if($companyInfo->phone_2) / {!!$companyInfo->phone_2!!}@endif</p>
-                    </div>
-
-                    <!-- Single Contact Info -->
-                    <div class="single-contact-info d-flex">
-                        <div class="contact-icon mr-15">
-                            <i class="fa fa-envelope-o"></i>
-                        </div>
-                        <p>{!!$companyInfo->email_1!!}<br>{!!$companyInfo->email_2!!}</p>
-                    </div>                        
-
-                    <!-- Contact Social Info -->
-                    <div class="contact-social-info d-flex mt-50 mb-50 text-center">
-                        <a href="https://facebook.com/{!!$companyInfo->facebook!!}"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a>
-                        <a href="https://twitter.com/{!!$companyInfo->twitter!!}"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a>
-                        <a href="https://instagram.com/{!!$companyInfo->instagram!!}"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
-                    </div>
-
-
-                </div>
-            </div>
-
             <!-- Contact Form Area -->
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-lg-8 offset-lg-2">
+                <h5 class="text-center">Escríbenos y le responderemos a la mayor brevedad posible.</h5>
+                <br>
                 <div class="contact-form-area mb-100">
                     <div id="sendmessage">
                         <div class="alert alert-success">
@@ -92,7 +54,7 @@
                             <div class="validation"></div>
                         </div>
                         <div class="form-group">
-                            <button class="btn btn-info btn-2 mt-30 btn-submit" type="submit">Enviar mensaje</button>
+                            <button class="btn btn-contact btn-info btn-2 mt-30 btn-submit" style="background-color: #333; border-color: #444;" type="submit">Enviar mensaje</button>
                             <button type="button" class="btn btn-info btn-2 mt-30 btn-sending" disabled="true" style="display: none;">Enviando mensaje <i class="fa fa-spinner fa-spin"></i></button>
                         </div>
                     </form>

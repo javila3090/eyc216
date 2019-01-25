@@ -2,12 +2,9 @@
 
 @section('content')
 
-
+@include('partials.banner')
 <!-- ##### Course Area Start ##### -->
-<br>
-<br>
-<br>
-<br>
+
 @if($secondary)
 <div class="cryptos-feature-area section-padding-100-70">
     <div class="container-fluid main-text">
@@ -37,20 +34,36 @@
         </div>
         <br>
         @endif
+        <div class="row">
+        @php
+            $i = 1;
+        @endphp
+        @foreach($secondaryBanner as $v)
+            <!-- Single Course Area -->
+                <div class="col-12 col-md-6 col-xl-3">
+                    <div class="guideline-content">
+
+                    </div>
+                    <div class="single-feature-area mb-30 text-center wow rollIn box-shadow size-16px">
+                        <h3>{!!$v->title!!}</h3>
+                        <div class="heading-line"></div>
+                        <p>{!!$v->caption!!}</p>
+                    </div>
+                </div>
+                @php
+                    $i++;
+                @endphp
+            @endforeach
+        </div>
     </div>
 </div>
 @endif
 <!-- ##### Course Area End ##### -->
 
 <!-- ##### About Area Start ##### -->
-<!--<section class="cryptos-about-area">
+<section class="cryptos-about-area">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-12 col-md-6">
-                <div class="about-thumbnail mb-100">
-                    <img src="img/bg-img/about.png" alt="">
-                </div>
-            </div>
             <div class="col-12 col-md-6">
                 <div class="about-content mb-100">
                     <div class="section-heading">
@@ -61,9 +74,14 @@
                     </div>
                 </div>
             </div>
+            <div class="col-12 col-md-6">
+                <div class="about-thumbnail mb-100">
+                    <img src="img/bg-img/about.png" alt="">
+                </div>
+            </div>
         </div>
     </div>
-</section>-->
+</section>
 <!-- ##### About Area End ##### -->
 
 <!-- ##### Currency Area Start ##### -->

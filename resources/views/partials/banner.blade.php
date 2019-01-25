@@ -1,6 +1,6 @@
  <!-- ##### Hero Area Start ##### -->
  <section class="hero-area">
-    <div class="hero-slides owl-carousel" style="border-bottom: 3px solid #3599db">
+    <div class="hero-slides owl-carousel" style="">
         @php
             $i = 1;
         @endphp
@@ -11,7 +11,7 @@
                     <div class="row h-100 align-items-center">
                         <div class="col-md-6 col-xs-12">
                             <div class="hero-slides-content text-left">
-                                <h2 data-animation="{{$i==1 ? 'bounceInDown' : 'bounceInRight'}}" class="title-regular color-dark-blue" data-delay="100ms">{{$v->title}}</h2>
+                                <!--<h2 data-animation="{{$i==1 ? 'bounceInDown' : 'bounceInRight'}}" class="title-regular color-dark-blue" data-delay="100ms">{{$v->title}}</h2>-->
                                 @if($v->subtitle)
                                     <h6 data-animation="{{$i==1 ? 'lightSpeedIn' : 'rollIn'}}" class="subtitle-regular size-28px color-dark-blue" data-delay="400ms">{{$v->subtitle}}</h6>
                                 @endif
@@ -19,7 +19,7 @@
                                     <h6 data-animation="{{$i==1 ? 'bounceInUp' : 'rotateIn'}}" class="subtitle-regular banner-caption size-16px color-dark-blue" data-delay="700ms">{!!$v->caption!!}</h6>
                                 @endif
                                 @if($v->button)
-                                    <a href="{{route($v->target->display_name)}}" class="btn btn-info size-18px" data-animation="fadeInUp" data-delay="700ms"><b>{!!$v->button!!}</b></a>
+                                    <a href="" class="btn btn-info size-18px" data-animation="fadeInUp" data-delay="700ms"><b>{!!$v->button!!}</b></a>
                                 @endif
                             </div>
                         </div>

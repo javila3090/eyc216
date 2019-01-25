@@ -652,7 +652,6 @@ textarea:focus {
         opacity: 0;
         visibility: hidden;
         @include trans-duration(500ms);
-        border-bottom: 2px solid $bg-default;
         @media #{$breakpoint-xs} {
             width: 40px;
             height: 40px;
@@ -1230,7 +1229,7 @@ textarea:focus {
 }
 
 .bottom-footer-area {
-    background-color: #090f1a;
+    background-color: $bg-default !important;
     text-align: center;
     height: 60px;
     p {
@@ -1364,6 +1363,9 @@ textarea:focus {
 }
 
 /* :: 14.0 Contact Area CSS */
+.btn-contact{
+    background-color: #333 !important;
+}
 
 .map-area {
     position: relative;
