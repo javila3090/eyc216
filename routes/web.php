@@ -114,4 +114,12 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
 
 });
 
+Route::get('miembros/dashboard','MemberController@index')->name('members.dashboard')->middleware('member');
+Route::get('miembros/ingresar','Members\LoginController@showLoginForm')->name('members.login');
+Route::post('miembros/ingresar','Members\LoginController@login');
+Route::post('members-password/email','Members\ForgotPasswordController@sendResetLinkEmail')->name('members.password.email');
+Route::get('members-password/reset','Members\ForgotPasswordController@showLinkRequestForm')->name('members.password.request');
+Route::post('members-password/reset','Members\ResetPasswordController@reset');
+Route::get('members-password/reset/{token}','Members\ResetPasswordController@showResetForm')->name('members.password.reset');
+
 Auth::routes();

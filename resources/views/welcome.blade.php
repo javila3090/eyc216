@@ -3,10 +3,34 @@
 @section('content')
 
 @include('partials.banner')
-<!-- ##### Course Area Start ##### -->
+<!-- ##### About Area Start ##### -->
+<section class="cryptos-about-area section-padding-100-0">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12 col-md-6">
+                <div class="about-content">
+                    <div class="section-heading">
+                        <h3><b>{{$aboutUs->title}}</b></h3>
+                        <hr>
+                        <br>
+                        <h5>{!! $aboutUs->content !!}</h5>
+
+                        <a href="#" class="btn cryptos-btn mt-20">Saber más</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="about-thumbnail text-center">
+                    <img src="{{$aboutUs->image}}" width="400">
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+</section>
 
 @if($secondary)
-<div class="cryptos-feature-area section-padding-100">
+<div class="cryptos-feature-area section-padding-50-100">
     <div class="container-fluid main-text">
         <div class="row">
             <div class="col-12 col-md-12">
@@ -42,14 +66,18 @@
         @endphp
         @foreach($secondaryBanner as $v)
             <!-- Single Course Area -->
-                <div class="col-12 col-md-6 col-xl-3">
+                <div class="col-4 col-md-4 col-xs-12">
                     <div class="guideline-content">
 
                     </div>
                     <div class="single-feature-area mb-30 text-center wow rollIn box-shadow size-16px">
                         <h3>{!!$v->title!!}</h3>
-                        <div class="heading-line"></div>
+                        <hr>
+                        @if($v->image!='')<img src="{{$v->image}}" class="img rounded"/>@endif
                         <p>{!!$v->caption!!}</p>
+                        @if($v->button)
+                            <a href="{{route($v->target->display_name)}}" class="btn cryptos-btn mt-20">{!!$v->button!!}</a>
+                        @endif
                     </div>
                 </div>
                 @php
@@ -61,32 +89,6 @@
 </div>
 @endif
 <!-- ##### Course Area End ##### -->
-
-<!-- ##### About Area Start ##### -->
-<section class="cryptos-about-area">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-12 col-md-6">
-                <div class="about-content mb-100">
-                    <div class="section-heading">
-                        <h3><b>{{$aboutUs->title}}</b></h3>
-                        <hr>
-                        <br>
-                        <h5>{!! $aboutUs->content !!}</h5>
-
-                        <a href="#" class="btn cryptos-btn mt-20">Read More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6">
-                <div class="about-thumbnail mb-100">
-                    <img src="img/bg-img/about.png" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- ##### About Area End ##### -->
 
 <!-- ##### Currency Area Start ##### -->
 <!--<section class="currency-calculator-area section-padding-100 bg-img bg-overlay" style="background-image: url(img/bg-img/bg-2.jpg);">

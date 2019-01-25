@@ -23,4 +23,22 @@ class RedirectIfAuthenticated
 
         return $next($request);
     }
+
+    /*public function handle($request, Closure $next, $guard = null)
+    {
+        switch ($guard) {
+            case 'members':
+                if(Auth::guard($guard)->check()){
+                    return redirect()->route('members.dashboard');
+                }
+                break;
+
+            default:
+                if (Auth::guard($guard)->check()) {
+                    return redirect('/admin');
+                }
+                break;
+        }
+        return $next($request);
+    }*/
 }

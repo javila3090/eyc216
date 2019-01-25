@@ -702,6 +702,7 @@ textarea:focus {
     }
     h3 {
         font-size: 30px;
+        font-family: "Montserrat", sans-serif !important;
         margin-bottom: 30px;
         @include trans-duration(500ms);
         @media #{$breakpoint-md} {

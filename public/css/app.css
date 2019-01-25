@@ -16297,9 +16297,9 @@ img {
 }
 
 .breakpoint-off .classynav ul li .dropdown {
-  width: 300px;
+  width: 325px;
   position: absolute;
-  background-color: #333;
+  background-color: #13325e;
   top: 120%;
   left: 0;
   z-index: 100;
@@ -17367,7 +17367,7 @@ textarea:focus {
   display: inline-block;
   min-width: 150px;
   height: 54px;
-  background-color: #eef3f6;
+  background-color: #ddd;
   color: #292929;
   border: none;
   border-radius: 0;
@@ -17396,7 +17396,7 @@ textarea:focus {
 
 .cryptos-btn.btn-2:hover, .cryptos-btn.btn-2:focus {
   color: #292929;
-  background-color: #eef3f6;
+  background-color: #ddd;
   border-bottom: 3px solid #13325e;
 }
 
@@ -17408,7 +17408,7 @@ textarea:focus {
 
 .cryptos-btn.btn-3:hover, .cryptos-btn.btn-3:focus {
   color: #292929;
-  background-color: #eef3f6;
+  background-color: #ddd;
   border-bottom: 3px solid #13325e;
 }
 
@@ -17477,7 +17477,7 @@ textarea:focus {
   width: 100%;
   z-index: 100;
   height: 125px;
-  background-color: #333;
+  background-color: #13325e;
   text-transform: uppercase !important;
   color: #fff !important;
   -webkit-box-shadow: 0 5px 70px rgba(0, 0, 0, 0.55);
@@ -17512,7 +17512,7 @@ textarea:focus {
 }
 
 .header-area .cryptos-main-menu .classy-navbar .classynav ul li a {
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.5px;
   color: #fff;
@@ -17520,7 +17520,7 @@ textarea:focus {
 }
 
 .header-area .cryptos-main-menu .classy-navbar .classynav ul li a:hover, .header-area .cryptos-main-menu .classy-navbar .classynav ul li a:focus {
-  color: grey;
+  color: #bbb;
 }
 
 .header-area .cryptos-main-menu .breakpoint-off .classynav ul li .dropdown {
@@ -17530,9 +17530,9 @@ textarea:focus {
 
 .header-area .cryptos-main-menu .classynav ul li .dropdown li a,
 .header-area .cryptos-main-menu .classynav ul li .megamenu li a {
-  font-size: 10px;
-  background-color: #333;
-  border-bottom: 1px solid #888;
+  font-size: 11px;
+  background-color: #13325e;
+  border-bottom: 1px solid #fff;
 }
 
 .header-area .cryptos-main-menu .classynav .header-newsletter-form {
@@ -17562,7 +17562,7 @@ textarea:focus {
 .header-area .cryptos-main-menu .classynav .header-newsletter-form form {
   width: 265px;
   height: 35px;
-  background-color: #eef3f6;
+  background-color: #ddd;
   position: relative;
   z-index: 1;
 }
@@ -17587,7 +17587,7 @@ textarea:focus {
   width: 90px;
   height: 35px;
   border: none;
-  background-color: #eef3f6;
+  background-color: #ddd;
   position: absolute;
   top: 0;
   right: 0;
@@ -17697,7 +17697,7 @@ textarea:focus {
 }
 
 .hero-slides .single-hero-slide h2 span {
-  color: grey;
+  color: #bbb;
 }
 
 .hero-slides .single-hero-slide h6 {
@@ -17723,7 +17723,7 @@ textarea:focus {
 
 .hero-slides .owl-prev,
 .hero-slides .owl-next {
-  background-color: #eef3f6;
+  background-color: #ddd;
   width: 40px;
   height: 40px;
   line-height: 40px;
@@ -17795,8 +17795,9 @@ textarea:focus {
   position: relative;
   z-index: 1;
   padding: 50px 35px;
-  background-color: #eef3f6;
-  min-height: 450px;
+  background-color: #ddd;
+  min-height: 500px;
+  border-radius: 10px;
   -webkit-transition-duration: 500ms;
   transition-duration: 500ms;
 }
@@ -17811,6 +17812,7 @@ textarea:focus {
 
 .single-feature-area h3 {
   font-size: 22px;
+  font-family: "Montserrat", sans-serif !important;
   -webkit-transition-duration: 500ms;
   transition-duration: 500ms;
 }
@@ -17933,7 +17935,7 @@ textarea:focus {
 .currency-calculator .calculator-first-part input {
   width: 85px;
   height: 53px;
-  border: 2px solid grey;
+  border: 2px solid #bbb;
   border-radius: 0;
   margin-right: 12px;
   background-color: transparent;
@@ -18126,7 +18128,7 @@ textarea:focus {
 }
 
 .single-blog-area .blog-content .post-title:hover {
-  color: grey;
+  color: #bbb;
 }
 
 .single-blog-area .blog-content p {
@@ -18147,7 +18149,7 @@ textarea:focus {
 }
 
 .single-blog-area .blog-content .meta-data a:first-child, .single-blog-area .blog-content .meta-data a:hover {
-  color: grey;
+  color: #bbb;
 }
 
 .single-blog-area.blog-style-2 .blog-thumbnail {
@@ -18182,7 +18184,7 @@ textarea:focus {
 
 .blog-section-heading h3 {
   font-size: 30px;
-  border-bottom: 3px solid grey;
+  border-bottom: 3px solid #bbb;
   display: inline-block;
   line-height: 1.5;
 }
@@ -18203,7 +18205,7 @@ textarea:focus {
   position: relative;
   z-index: 1;
   padding: 12px 15px;
-  background-color: #eef3f6;
+  background-color: #ddd;
   margin-bottom: 2px;
 }
 
@@ -18362,7 +18364,7 @@ textarea:focus {
   z-index: 10;
   font-size: 14px;
   text-transform: uppercase;
-  color: grey;
+  color: #bbb;
   font-family: "Lato Regular", sans-serif;
   line-height: 1;
   font-weight: 700;
@@ -18424,7 +18426,7 @@ textarea:focus {
 }
 
 .main-footer-area .footer-widget .footer-social-info a:hover, .main-footer-area .footer-widget .footer-social-info a:focus {
-  color: grey;
+  color: #bbb;
 }
 
 .main-footer-area .footer-widget .single--blog-post {
@@ -18445,7 +18447,7 @@ textarea:focus {
 }
 
 .main-footer-area .footer-widget .single--blog-post a:hover {
-  color: grey;
+  color: #bbb;
 }
 
 .main-footer-area .footer-widget .single--blog-post a p {
@@ -18455,13 +18457,13 @@ textarea:focus {
 }
 
 .main-footer-area .footer-widget .single--blog-post a p:hover {
-  color: grey;
+  color: #bbb;
 }
 
 .main-footer-area .footer-widget .single--blog-post span {
   margin-bottom: 0;
   font-size: 14px;
-  color: grey;
+  color: #bbb;
 }
 
 .main-footer-area .footer-widget .useful-links li {
@@ -18482,7 +18484,7 @@ textarea:focus {
 }
 
 .main-footer-area .footer-widget .useful-links li a:hover, .main-footer-area .footer-widget .useful-links li a:focus {
-  color: grey;
+  color: #bbb;
 }
 
 .bottom-footer-area {
@@ -18505,7 +18507,7 @@ textarea:focus {
 }
 
 .bottom-footer-area p a:hover {
-  color: grey;
+  color: #bbb;
 }
 
 /* :: 12.0 Breadcumb Area CSS */
@@ -18723,13 +18725,13 @@ textarea:focus {
 }
 
 .contact-information .contact-social-info a:hover {
-  color: grey;
+  color: #bbb;
 }
 
 .contact-information .single-contact-info .contact-icon i {
   display: inline-block;
   color: #ffffff;
-  background-color: grey;
+  background-color: #bbb;
   width: 30px;
   height: 30px;
   text-align: center;
@@ -18745,12 +18747,12 @@ textarea:focus {
 .contact-form-area .form-control {
   height: 52px;
   width: 100%;
-  background-color: #eef3f6;
+  background-color: #ddd;
   font-size: 12px;
   font-style: italic;
   margin-bottom: 15px;
   border: none;
-  border-bottom: 3px solid #eef3f6;
+  border-bottom: 3px solid #ddd;
   border-radius: 0;
   padding: 15px 30px;
   -webkit-transition-duration: 500ms;
@@ -18758,7 +18760,7 @@ textarea:focus {
 }
 
 .contact-form-area .form-control:focus {
-  border-bottom: 3px solid grey;
+  border-bottom: 3px solid #bbb;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
@@ -18793,13 +18795,13 @@ textarea:focus {
 .single-cool-fact h3 {
   font-size: 48px;
   margin-bottom: 0;
-  color: grey;
+  color: #bbb;
 }
 
 .single-cool-fact .line {
   width: 35px;
   height: 5px;
-  background-color: grey;
+  background-color: #bbb;
   margin: 20px auto;
 }
 
@@ -18859,7 +18861,7 @@ textarea:focus {
 }
 
 .single-accordion h6 a.collapsed {
-  background-color: #eef3f6;
+  background-color: #ddd;
   color: #444;
   border-bottom: 3px solid #13325e;
 }
@@ -18899,7 +18901,7 @@ textarea:focus {
 }
 
 .cryptos-tabs-content .nav-tabs .nav-link {
-  background-color: #eef3f6;
+  background-color: #ddd;
   color: #444;
   border-bottom: 3px solid #13325e;
   padding: 0 15px;

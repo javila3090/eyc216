@@ -8,18 +8,6 @@
         <li class="nav-item d-none d-sm-inline-block">
             <a href="{{url('/admin')}}" class="nav-link"><i class="nav-icon fa fa-home"></i>  Inicio</a>
         </li>
-        <li class="nav-item d-none d-sm-inline-block desktop">
-            <a href="{{url('/admin/messages')}}" class="nav-link"><i class="nav-icon fa fa-envelope"></i>  Mensajes @if(Session::has('unread_messages')) <b>({{ Session::get('unread_messages')}})</b> @endif</a>
-        </li>
-        <li class="nav-item d-none d-sm-inline-block desktop">
-            <a href="{{url('/admin/quotes')}}" class="nav-link"><i class="nav-icon fa fa-tag"></i>  Cotizaciones @if(Session::has('unread_quotes')) <b>({{ Session::get('unread_quotes')}})</b> @endif</a>
-        </li>
-        <li class="nav-item d-none d-sm-inline-block desktop">
-            <a href="{{url('/admin/agreements')}}" class="nav-link"><i class="nav-icon fa fa-clipboard"></i>  Solicitud de convenios @if(Session::has('unread_agreements')) <b>({{ Session::get('unread_agreements')}})</b> @endif</a>
-        </li>        
-        <li class="nav-item d-none d-sm-inline-block desktop">
-            <a href="{{url('/')}}" class="nav-link"><i class="nav-icon fa fa-external-link-square"></i>  Ir al sitio web</a>
-        </li>
     </ul>
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">

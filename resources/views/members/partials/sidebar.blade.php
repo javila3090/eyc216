@@ -2,8 +2,8 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="/admin/" class="brand-link">
-        <img src="{{asset('img/logo.png')}}" alt="JA Logo" class="brand-image">
-        <span class="brand-text font-weight-bold" style="padding: 10px;">DASHBOARD</span>
+        <img src="{{asset('img/logo_ja.png')}}" alt="JA Logo" class="brand-image">
+        <span class="brand-text font-weight-bold" style="padding: 10px;">WEB ADMIN</span>
     </a>
 
     <!-- Sidebar -->
