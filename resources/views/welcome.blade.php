@@ -6,7 +6,7 @@
 <!-- ##### Course Area Start ##### -->
 
 @if($secondary)
-<div class="cryptos-feature-area section-padding-100-70">
+<div class="cryptos-feature-area section-padding-100">
     <div class="container-fluid main-text">
         <div class="row">
             <div class="col-12 col-md-12">
@@ -34,6 +34,8 @@
         </div>
         <br>
         @endif
+        <br>
+        <br>
         <div class="row">
         @php
             $i = 1;
@@ -67,10 +69,12 @@
             <div class="col-12 col-md-6">
                 <div class="about-content mb-100">
                     <div class="section-heading">
-                        <h3>Let’s change <br><span>the world</span> together</h3>
-                        <h5>Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi. Donec et sollicitudin est, in euismod erat. Ut at erat et arcu pulvinar cursus a eget nisl.</h5>
-                        <p>Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi. Donec et sollicitudin est, in euismod erat. Ut at erat et arcu pulvinar cursus a eget nisl. Cras vitae turpis lacinia, lacinia lacus non, fermentum nisi.</p>
-                        <a href="#" class="btn cryptos-btn mt-30">Read More</a>
+                        <h3><b>{{$aboutUs->title}}</b></h3>
+                        <hr>
+                        <br>
+                        <h5>{!! $aboutUs->content !!}</h5>
+
+                        <a href="#" class="btn cryptos-btn mt-20">Read More</a>
                     </div>
                 </div>
             </div>
