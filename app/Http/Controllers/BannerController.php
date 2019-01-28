@@ -33,8 +33,8 @@ class BannerController extends Controller
 	}
 
 	public function create(){
-		$banner_types = BannerType::pluck('name','id');
-		$sections = SectionType::pluck('name','id');
+		$banner_types = BannerType::orderBy('name','ASC')->pluck('name','id');
+		$sections = SectionType::orderBy('name','ASC')->pluck('name','id');
 		$icons = Icon::pluck('display_name','id');
 		return view('admin.banner.add',compact('banner_types','sections','icons'));
 	}
@@ -90,7 +90,7 @@ class BannerController extends Controller
 	public function edit($id){
 
 		$banner = Banner::find($id);
-		$banner_types = BannerType::pluck('name','id');
+		$banner_types = BannerType::orderBy('name','ASC')->pluck('name','id');
 		$selected_banner = BannerType::where('id',$banner->banner_type_id)->pluck('name','id');
 		$sections = SectionType::all();
 		$selected_button_target = SectionType::where('id',$banner->button_target)->pluck('name','id');

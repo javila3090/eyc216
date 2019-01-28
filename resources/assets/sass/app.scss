@@ -869,6 +869,14 @@ textarea:focus {
             font-size: 11px;
             background-color: $bg-default;
             border-bottom: 1px solid #fff;
+            @media #{$breakpoint-md} {
+                background-color: #ddd;
+                color: $bg-default;
+            }
+            @media #{$breakpoint-xs} {
+                background-color: #ddd;
+                color: $bg-default;
+            }
         }
         .classynav {
             .header-newsletter-form {
@@ -947,6 +955,13 @@ textarea:focus {
     .owl-next {
         left: auto;
         right: 5%;
+    }
+}
+
+.classy-navbar .nav-brand{
+    @media #{$breakpoint-xs} {
+        width: 70px !important;
+        margin-top: 0 !important;
     }
 }
 
@@ -2144,7 +2159,7 @@ textarea:focus {
 }
 @media only screen and (max-width: 375px) {
     .breakpoint-on .classy-navbar .classy-menu{        
-        background-color: #f5f5f5;
+        background-color: $bg-default;
         position: fixed;
         top: 0;
         left: -375px;
@@ -2176,7 +2191,7 @@ textarea:focus {
 }
 @media only screen and (max-width: 360px) {
     .breakpoint-on .classy-navbar .classy-menu{        
-        background-color: #f5f5f5;
+        background-color: $bg-default;
         position: fixed;
         top: 0;
         left: -360px;
@@ -2208,7 +2223,7 @@ textarea:focus {
 }
 @media only screen and (max-width: 320px) {
     .breakpoint-on .classy-navbar .classy-menu{        
-        background-color: #f5f5f5;
+        background-color: $bg-default !important;
         position: fixed;
         top: 0;
         left: -320px;

@@ -66,7 +66,7 @@
         @endphp
         @foreach($secondaryBanner as $v)
             <!-- Single Course Area -->
-                <div class="col-4 col-md-4 col-xs-12">
+                <div class="col-12 col-md-4 col-xs-12">
                     <div class="guideline-content">
 
                     </div>

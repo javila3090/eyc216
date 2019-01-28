@@ -8,6 +8,9 @@
         <li class="nav-item d-none d-sm-inline-block">
             <a href="{{url('/admin')}}" class="nav-link"><i class="nav-icon fa fa-home"></i>  Inicio</a>
         </li>
+        <li class="nav-item d-none d-sm-inline-block desktop">
+            <a href="{{url('/')}}" class="nav-link"><i class="nav-icon fa fa-external-link-square"></i>  Ir al sitio web</a>
+        </li>
     </ul>
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">

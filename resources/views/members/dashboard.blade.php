@@ -17,11 +17,13 @@
     <!-- ##### About Area Start ##### -->
     <section class="cryptos-about-area section-padding-50">
         <div class="container">
-            <div class="row align-items-center" >
-                <div class="row mb-100">
-                    <div class="about-content text-justify">
-                        <div class="wow bounceInUp">
-                            <p>Estás logueado</p>
+            <div class="col-12 col-md-12">
+                <div class="row align-items-center" >
+                    <div class=" mb-100">
+                        <div class="about-content text-justify">
+                            <div class="wow bounceInUp">
+                                <p>Estás logueado</p>
+                            </div>
                         </div>
                     </div>
                 </div>

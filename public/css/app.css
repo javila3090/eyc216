@@ -16365,7 +16365,7 @@ img {
 }
 
 .breakpoint-on .classy-navbar .classy-menu {
-  background-color: #fff;
+  background-color: #13325e;
   position: fixed;
   top: 0;
   left: -310px;
@@ -16449,7 +16449,7 @@ img {
 }
 
 .breakpoint-on .classynav > ul > li > a {
-  background-color: #fff;
+  background-color: #13325e;
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 
@@ -17535,6 +17535,22 @@ textarea:focus {
   border-bottom: 1px solid #fff;
 }
 
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .header-area .cryptos-main-menu .classynav ul li .dropdown li a,
+  .header-area .cryptos-main-menu .classynav ul li .megamenu li a {
+    background-color: #ddd;
+    color: #13325e;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .header-area .cryptos-main-menu .classynav ul li .dropdown li a,
+  .header-area .cryptos-main-menu .classynav ul li .megamenu li a {
+    background-color: #ddd;
+    color: #13325e;
+  }
+}
+
 .header-area .cryptos-main-menu .classynav .header-newsletter-form {
   margin-left: 100px;
 }
@@ -17628,6 +17644,13 @@ textarea:focus {
 .megamenu-slides .owl-next {
   left: auto;
   right: 5%;
+}
+
+@media only screen and (max-width: 767px) {
+  .classy-navbar .nav-brand {
+    width: 70px !important;
+    margin-top: 0 !important;
+  }
 }
 
 /* :: 6.0 Welcome Area CSS */
@@ -19041,7 +19064,7 @@ textarea:focus {
 
 @media only screen and (max-width: 375px) {
   .breakpoint-on .classy-navbar .classy-menu {
-    background-color: #f5f5f5;
+    background-color: #13325e;
     position: fixed;
     top: 0;
     left: -375px;
@@ -19076,7 +19099,7 @@ textarea:focus {
 
 @media only screen and (max-width: 360px) {
   .breakpoint-on .classy-navbar .classy-menu {
-    background-color: #f5f5f5;
+    background-color: #13325e;
     position: fixed;
     top: 0;
     left: -360px;
@@ -19111,7 +19134,7 @@ textarea:focus {
 
 @media only screen and (max-width: 320px) {
   .breakpoint-on .classy-navbar .classy-menu {
-    background-color: #f5f5f5;
+    background-color: #13325e !important;
     position: fixed;
     top: 0;
     left: -320px;

@@ -1,6 +1,6 @@
-  @extends('admin.layouts.app')
+@extends('admin.layouts.app')
 
-  @section('content')
+@section('content')
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -25,11 +25,11 @@
     <!-- Main content -->
     <section class="content">
       <!--Incluir mensaje de error-->
-      @if (count($errors) > 0)
+    @if (count($errors) > 0)
       @include('admin.partials.errors')
-      @endif
+    @endif
 
-      <!--Incluir mensaje de éxito-->
+    <!--Incluir mensaje de éxito-->
       @include('admin.partials.messages')
 
       <div class="row">
@@ -42,82 +42,82 @@
               <!-- tools box -->
               <div class="card-tools">
                 <button type="button" class="btn btn-tool btn-sm"
-                data-widget="collapse"
-                data-toggle="tooltip"
-                title="Collapse">
-                <i class="fa fa-minus"></i>
-              </button>
-              <button type="button" class="btn btn-tool btn-sm"
-              data-widget="remove"
-              data-toggle="tooltip"
-              title="Remove">
-              <i class="fa fa-times"></i>
-            </button>
-          </div>
-          <!-- /. tools -->
-        </div>
-        <!-- /.card-header -->
-        {!! Form::model($banner,['route' => ['update_banner', $banner], 'method' => 'PUT','enctype' => 'multipart/form-data']) !!}
-        {{ csrf_field() }}
-        <div class="card-body">
-          <div class="form-group">
-            <label for="exampleInputTitulo">Título</label>
-            {!! Form::text('title', null, ['class' => 'form-control' , 'required' => 'required','placeholder'=>'Ingrese un título']) !!}
-          </div>
-          <div class="form-group">
-            <label for="exampleInputSubtitulo">Sub título</label>
-            {!! Form::text('subtitle', null, ['class' => 'form-control' , 'placeholder'=>'Ingrese un subtítulo']) !!}              
-          </div>
-          <div class="form-group">
-            <label for="exampleInputFile">Imagen</label>
-            <div class="input-group">
-              <div class="custom-file">
-                {!! Form::file('image', ['class' => 'form-control' , 'placeholder'=>'Escoja un achivo']) !!}                  
-              </div>              
+                        data-widget="collapse"
+                        data-toggle="tooltip"
+                        title="Collapse">
+                  <i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-tool btn-sm"
+                        data-widget="remove"
+                        data-toggle="tooltip"
+                        title="Remove">
+                  <i class="fa fa-times"></i>
+                </button>
+              </div>
+              <!-- /. tools -->
             </div>
+            <!-- /.card-header -->
+            {!! Form::model($banner,['route' => ['update_banner', $banner], 'method' => 'PUT','enctype' => 'multipart/form-data']) !!}
+            {{ csrf_field() }}
+            <div class="card-body">
+              <div class="form-group">
+                <label for="exampleInputTitulo">Título</label>
+                {!! Form::text('title', null, ['class' => 'form-control' , 'required' => 'required','placeholder'=>'Ingrese un título']) !!}
+              </div>
+              <div class="form-group">
+                <label for="exampleInputSubtitulo">Sub título</label>
+                {!! Form::text('subtitle', null, ['class' => 'form-control' , 'placeholder'=>'Ingrese un subtítulo']) !!}
+              </div>
+              <div class="form-group">
+                <label for="exampleInputFile">Imagen</label>
+                <div class="input-group">
+                  <div class="custom-file">
+                    {!! Form::file('image', ['class' => 'form-control' , 'placeholder'=>'Escoja un achivo']) !!}
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputButton">Botón</label>
+                {!! Form::text('button', null, ['class' => 'form-control' , 'placeholder'=>'Ingrese el nombre del botón']) !!}
+              </div>
+              <div class="form-group">
+                <label>Acción del botón</label>
+                <select name="button_target" class="form-control">
+                  <option value="">Seleccione una opción</option>
+                  @foreach ($sections as $section)
+                    <option value="{{$section->id}}" {{ ($section->id == $banner->button_target) ? 'selected=selected' : '' }}>
+                      {{$section->name}}
+                    </option>
+                  @endforeach
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Tipo de banner</label>
+                {!! Form::select('banner_type_id', $banner_types, @$selected_banner_type, ['class' => 'form-control', 'required' => 'required','placeholder'=>'Elija una opción']) !!}
+              </div>
+              <div class="form-group">
+                <label>Icono</label>
+                {!! Form::select('icon_id', $icons, $banner->icon_id, ['class' => 'form-control', 'placeholder'=>'Elija una opción']) !!}
+              </div>
+              <div class="form-group">
+                <label for="exampleInputContenido">Contenido</label>
+                {!! Form::textarea('caption',null,['class'=>'form-control', 'rows' => 10, 'id'=>'editor1']) !!}
+              </div>
+            </div>
+            <div class="card-footer">
+              <button type="submit" class="btn btn-primary">Actualizar</button>
+              <a href="{{url('admin/banner')}}" class="btn btn-danger">Volver</a>
+            </div>
+            {!! Form::close() !!}
           </div>
-          <div class="form-group">
-            <label for="exampleInputButton">Botón</label>
-            {!! Form::text('button', null, ['class' => 'form-control' , 'placeholder'=>'Ingrese el nombre del botón']) !!}              
-          </div>
-          <div class="form-group">
-            <label>Acción del botón</label>
-            <select name="button_target" class="form-control">
-              <option value="">Seleccione una opción</option>
-              @foreach ($sections as $section)
-              <option value="{{$section->id}}" {{ ($section->id == $banner->button_target) ? 'selected=selected' : '' }}>
-                {{$section->name}}
-              </option>
-              @endforeach
-            </select>            
-          </div>           
-          <div class="form-group">
-            <label>Tipo de banner</label>
-            {!! Form::select('banner_type_id', $banner_types, @$selected_banner_type, ['class' => 'form-control', 'required' => 'required','placeholder'=>'Elija una opción']) !!}              
-          </div>
-          <div class="form-group">
-            <label>Icono</label>
-            {!! Form::select('icon_id', $icons, $banner->icon_id, ['class' => 'form-control', 'placeholder'=>'Elija una opción']) !!}               
-          </div>    
-          <div class="form-group">
-            <label for="exampleInputContenido">Contenido</label>
-            {!! Form::textarea('caption',null,['class'=>'form-control', 'rows' => 10, 'id'=>'editor1']) !!}
-          </div>            
+          <!-- /.card -->
         </div>
-        <div class="card-footer">
-          <button type="submit" class="btn btn-primary">Actualizar</button>
-          <a href="{{url('admin/banner')}}" class="btn btn-danger">Volver</a>
-        </div>
-        {!! Form::close() !!}
+        <!-- /.col-->
       </div>
-      <!-- /.card -->
-    </div>
-    <!-- /.col-->
+      <!-- ./row -->
+    </section>
+    <!-- /.content -->
   </div>
-  <!-- ./row -->
-</section>
-<!-- /.content -->
-</div>
 
 
 @endsection

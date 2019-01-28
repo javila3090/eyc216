@@ -58,7 +58,7 @@
                     <tr>
                       <td>{{$v->title}}</td>
                       <td>{{$v->subtitle}}</td>
-                      <td>{!!$v->caption!!}</td>
+                      <td style="white-space: pre-wrap;overflow: hidden;text-overflow: ellipsis;">{!!$v->caption!!}</td>
                       <td>{{$v->image}}</td>
                       <td>{{$v->type->name}}</td>
                       <td>

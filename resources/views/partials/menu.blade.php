@@ -5,7 +5,7 @@
             <nav class="classy-navbar justify-content-between" id="cryptosNav">
 
                 <!-- Logo -->
-                <a href="/"><img src="{{asset('img/logo.png')}}" class="nav-brand float-left img-fluid logo rounded-circle"></a>
+                <a href="/"><img src="{{asset('img/logo.png')}}" class="nav-brand float-left img-fluid logo rounded-circle responsive-logo"></a>
 
 
                 <!-- Navbar Toggler -->
@@ -28,13 +28,14 @@
                         <!--<li><a href="{{route('aboutUs')}}">¿Qué es la masonería?</a></li>-->
                             <li><a href="#">Historia</a>
                                 <ul class="dropdown">
+                                    <li><a href="{{route('aboutUs')}}">Nosotros</a></li>
                                     <li><a href="{{route('page',2)}}">Organización Gran Logia de Inglaterra</a></li>
                                     <li><a href="{{route('page',12)}}">Sede Londres GL Unida de Inglaterra</a></li>
                                     <li><a href="{{route('page',5)}}">Fundadores de la Gran Logia de Inglaterra</a></li>
                                     <li><a href="{{route('page',13)}}">Masonería Inglesa en el mundo</a></li>
                                     <li><a href="{{route('page',15)}}">Masonería Inglesa en Chile</a></li>
-                                    <li><a href="{{route('page',16)}}">Masones destacados ingleses</a></li>
-                                    <li><a href="{{route('page',11)}}">Grandes masones de la historia</a></li>
+                                    <li><a href="#">Masones destacados ingleses</a></li>
+                                    <li><a href="#">Grandes masones de la historia</a></li>
                                 </ul>
                             </li>
                             <li><a href="#">Rito de York</a>
@@ -43,14 +44,9 @@
                                     <li><a href="{{route('page',6)}}">Grados masónicos rito de york</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">Noticias</a>
-                                <ul class="dropdown">
-                                    <li><a href="{{route('aboutUs')}}">Noticias del gran oriente inglés</a></li>
-                                    <li><a href="{{route('requirements')}}">Noticias escuadra y compás 216</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="{{route('quote')}}">Canal masónico</a></li>
-                            <li><a href="{{route('quote')}}">Logia celestial</a></li>
+                            <li><a href="{{url('/noticias')}}">Noticias</a></li>
+                            <li><a href="#">Canal masónico</a></li>
+                            <li><a href="{{route('page',10)}}">Logia celestial</a></li>
                             <li><a href="{{route('members.dashboard')}}">Miembros</a></li>
                             <li><a href="{{route('contact')}}">Contacto</a></li>
                             @if(\Auth::user())

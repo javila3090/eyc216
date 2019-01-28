@@ -7,7 +7,6 @@
   <br>
   <br>
   <div class="login-box col-md-4 offset-md-4 mt-100" >
-
   @if (count($errors) > 0)
     @include('members.partials.errors')
   @endif

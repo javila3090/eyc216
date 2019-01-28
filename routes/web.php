@@ -39,9 +39,9 @@ Route::get('convenio/solicitar', 'HomeController@agreement')->name('agreement');
 
 Route::post('convenio/guardar', 'AgreementController@store')->name('agreement.store');
 
-Route::get('blog', 'HomeController@blog')->name('blog');
+Route::get('noticias', 'HomeController@blog')->name('blog');
 
-Route::get('blog/post/{blog_id}', 'HomeController@post')->name('post');
+Route::get('noticias/{blog_id}', 'HomeController@post')->name('post');
 
 Route::get('contacto', 'HomeController@contact')->name('contact');
 

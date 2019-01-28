@@ -16,7 +16,7 @@
 </div>
 <!-- ##### About Area Start ##### -->
 <section class="cryptos-about-area section-padding-50">
-    <div class="container">
+    <div class="col-10 offset-1">
         <div class="row align-items-center" >
             <div class="">
                 <div class="about-content text-center">

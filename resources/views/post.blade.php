@@ -39,7 +39,7 @@
                                         <a href="#">{{$post->created_at}}</a>
                                     </div>
                                     {!!$post->content!!}
-                                    <a href="/blog" class="btn cryptos-btn mt-50">Regresar</a>
+                                    <a href="/noticias" class="btn cryptos-btn mt-50">Regresar</a>
                                 </div>
                             </div>
                         </div>

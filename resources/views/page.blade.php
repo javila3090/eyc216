@@ -16,13 +16,13 @@
     </div>
     <!-- ##### About Area Start ##### -->
     <section class="cryptos-about-area section-padding-50">
-        <div class="container">
+        <div class="col-10 offset-1">
             @if($content->image!='')
                 <div class="text-center mb-50">
                     <img src="/{{$content->image}}" class="img-fluid img-thumbnail wow bounceInDown">
                 </div>
             @endif
-            <div class="row align-items-center" >
+            <div class=" align-items-center" >
                 <div class="row mb-100">
                     <div class="about-content text-justify">
                         <div class="wow bounceInUp">

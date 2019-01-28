@@ -8,7 +8,7 @@
         <div class="row h-100 align-items-center">
             <div class="col-12 col-md-12">
                 <div class="breadcumb-text text-center">
-                    <h2>Blog</h2>
+                    <h2>Noticias</h2>
                 </div>
             </div>
         </div>
@@ -26,7 +26,7 @@
 
                         <!-- Single Blog Area -->
                         <div class="container">
-                            @foreach($posts as $post)
+                            @forelse($posts as $post)
                             <div class="single-blog-area blog-style-2 mb-100">
                                 <!-- Thumbnail -->
                                 <div class="blog-thumbnail">
@@ -42,15 +42,26 @@
                                     <div style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
                                         {!!$post->content!!}
                                     </div>
-                                    <a href="blog/post/{{$post->id}}" class="btn cryptos-btn mt-50">Leer más</a>
+                                    <a href="/noticias/{{$post->id}}" class="btn cryptos-btn mt-50">Leer más</a>
                                 </div>
                             </div>
-                            @endforeach
+                            @empty
+                                <div class="single-blog-area blog-style-2 mb-100">
+
+                                    <!-- Content -->
+                                    <div class="blog-content text-justify" style="word-wrap: break-word;">
+                                        <div style="">
+                                            <h3>No hay noticias para mostrar</h3>
+                                        </div>
+                                        <a href="/" class="btn cryptos-btn mt-50">Regresar</a>
+                                    </div>
+                                </div>
+                            @endforelse
                         </div>
                     </div>
                 </div>
             </div>
-
+            @if(isset($last_posts) && count($last_posts)>0)
             <div class="col-12 col-lg-4">
                 <div class="cryptos-blog-sidebar-area">
 
@@ -72,6 +83,7 @@
                     @endforeach
                 </div>
             </div>
+            @endif
         </div>
     </div>
 </div>

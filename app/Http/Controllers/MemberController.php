@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\CompanyInfo;
 
 class MemberController extends Controller
 {
@@ -22,6 +23,7 @@ class MemberController extends Controller
      */
     public function index()
     {
-        return view('members.dashboard');
+        $companyInfo = CompanyInfo::orderBy('created_at', 'desc')->first();
+        return view('members.dashboard',compact('companyInfo'));
     }
 }

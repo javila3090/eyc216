@@ -31,7 +31,7 @@ class SectionController extends Controller
 
 	public function create(){
 
-		$section_types = SectionType::pluck('name','id');
+		$section_types = SectionType::orderBy('name','ASC')->pluck('name','id');
 		return view('admin.section.add',compact('section_types'));
 
 	}

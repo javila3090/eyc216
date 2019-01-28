@@ -54,8 +54,8 @@
                             <div class="validation"></div>
                         </div>
                         <div class="form-group">
-                            <button class="btn btn-contact btn-info btn-2 mt-30 btn-submit" style="background-color: #333; border-color: #444;" type="submit">Enviar mensaje</button>
-                            <button type="button" class="btn btn-info btn-2 mt-30 btn-sending" disabled="true" style="display: none;">Enviando mensaje <i class="fa fa-spinner fa-spin"></i></button>
+                            <button class="btn cryptos-btn btn-submit" type="submit">Enviar mensaje</button>
+                            <button type="button" class="btn cryptos-btn btn-sending" disabled="true" style="display: none;">Enviando mensaje <i class="fa fa-spinner fa-spin"></i></button>
                         </div>
                     </form>
                 </div>

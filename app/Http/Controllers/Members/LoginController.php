@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Members;
 
+use App\CompanyInfo;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
@@ -43,7 +44,8 @@ class LoginController extends Controller
      */
     public function showLoginForm()
     {
-        return view('members.login');
+        $companyInfo = CompanyInfo::orderBy('created_at', 'desc')->first();
+        return view('members.login',compact('companyInfo'));
     }
 
     /**

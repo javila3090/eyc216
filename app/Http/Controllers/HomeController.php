@@ -19,12 +19,12 @@ class HomeController extends Controller
     public function index(){
 
         SEOMeta::setTitle('Inicio');
-        SEOMeta::setDescription('Home page to Vitamedica');
-        SEOMeta::setCanonical('https://vitamedica.cl');
+        SEOMeta::setDescription('Home page to Escuadra y Compas 216');
+        SEOMeta::setCanonical('https://escuadraycompas.cl');
 
-        OpenGraph::setDescription('Home page to Vitamedica');
+        OpenGraph::setDescription('Home page to Escuadra y Compas 216');
         OpenGraph::setTitle('Inicio');
-        OpenGraph::setUrl('https://vitamedica.cl');
+        OpenGraph::setUrl('https://escuadraycompas.cl');
         OpenGraph::addProperty('type', 'home');
 
         Twitter::setTitle('Homepage');
@@ -33,9 +33,9 @@ class HomeController extends Controller
         ## Or
 
         SEO::setTitle('Inicio');
-        SEO::setDescription('Home page to Vitamedica');
-        SEO::opengraph()->setUrl('https://vitamedica.cl');
-        SEO::setCanonical('https://vitamedica.cl');
+        SEO::setDescription('Home page to Escuadra y Compas 216');
+        SEO::opengraph()->setUrl('https://escuadraycompas.cl');
+        SEO::setCanonical('https://escuadraycompas.cl');
         SEO::opengraph()->addProperty('type', 'home');
         SEO::twitter()->setSite('@jcesaravila');
 
@@ -61,12 +61,12 @@ class HomeController extends Controller
     public function contact(){
 
         SEOMeta::setTitle('Contacto');
-        SEOMeta::setDescription('Contact page to Vitamedica');
-        SEOMeta::setCanonical('https://vitamedica.cl');
+        SEOMeta::setDescription('Contact page to Escuadra y Compas 216');
+        SEOMeta::setCanonical('https://escuadraycompas.cl');
 
-        OpenGraph::setDescription('Contact page to Vitamedica');
+        OpenGraph::setDescription('Contact page to Escuadra y Compas 216');
         OpenGraph::setTitle('Contacto');
-        OpenGraph::setUrl('https://vitamedica.cl/contacto');
+        OpenGraph::setUrl('https://escuadraycompas.cl/contacto');
         OpenGraph::addProperty('type', 'contact');
 
         Twitter::setTitle('Contacto');
@@ -75,9 +75,9 @@ class HomeController extends Controller
         ## Or
 
         SEO::setTitle('Contacto');
-        SEO::setDescription('Contact page to Vitamedica');
-        SEO::opengraph()->setUrl('https://vitamedica.cl/contacto');
-        SEO::setCanonical('https://vitamedica.cl');
+        SEO::setDescription('Contact page to Escuadra y Compas 216');
+        SEO::opengraph()->setUrl('https://escuadraycompas.cl/contacto');
+        SEO::setCanonical('https://escuadraycompas.cl');
         SEO::opengraph()->addProperty('type', 'contact');
         SEO::twitter()->setSite('@jcesaravila');
 
@@ -103,7 +103,7 @@ class HomeController extends Controller
         $map = app('map')->create_map();
         $map = array('map_js' => $map['js'], 'map_html' => $map['html']);*/
 
-        Mapper::map(-33.4225765,-70.61018609999996, ['zoom' => 16, 'markers' => ['title' => 'Vitamedica', 'animation' => 'DROP']]);
+        Mapper::map(-33.4225765,-70.61018609999996, ['zoom' => 16, 'markers' => ['title' => 'Escuadra y Compas 216', 'animation' => 'DROP']]);
 
         return view('contact',compact('companyInfo'));
     }
@@ -111,12 +111,12 @@ class HomeController extends Controller
     public function quote(){
 
         SEOMeta::setTitle('Cotizar');
-        SEOMeta::setDescription('Quotes page to Vitamedica');
-        SEOMeta::setCanonical('https://vitamedica.cl');
+        SEOMeta::setDescription('Quotes page to Escuadra y Compas 216');
+        SEOMeta::setCanonical('https://escuadraycompas.cl');
 
-        OpenGraph::setDescription('Quotes page to Vitamedica');
+        OpenGraph::setDescription('Quotes page to Escuadra y Compas 216');
         OpenGraph::setTitle('Cotizar');
-        OpenGraph::setUrl('https://vitamedica.cl/cotizar');
+        OpenGraph::setUrl('https://escuadraycompas.cl/cotizar');
         OpenGraph::addProperty('type', 'quote');
 
         Twitter::setTitle('Cotizar');
@@ -125,9 +125,9 @@ class HomeController extends Controller
         ## Or
 
         SEO::setTitle('Cotizar');
-        SEO::setDescription('Quote page to Vitamedica');
-        SEO::opengraph()->setUrl('https://vitamedica.cl/cotizar');
-        SEO::setCanonical('https://vitamedica.cl');
+        SEO::setDescription('Quote page to Escuadra y Compas 216');
+        SEO::opengraph()->setUrl('https://escuadraycompas.cl/cotizar');
+        SEO::setCanonical('https://escuadraycompas.cl');
         SEO::opengraph()->addProperty('type', 'quote');
         SEO::twitter()->setSite('@jcesaravila');        
 
@@ -148,12 +148,12 @@ class HomeController extends Controller
     public function aboutUs(){
 
         SEOMeta::setTitle('Nosotros');
-        SEOMeta::setDescription('About us page to Vitamedica');
-        SEOMeta::setCanonical('https://vitamedica.cl');
+        SEOMeta::setDescription('About us page to Escuadra y Compas 216');
+        SEOMeta::setCanonical('https://escuadraycompas.cl');
 
-        OpenGraph::setDescription('Quotes page to Vitamedica');
+        OpenGraph::setDescription('Quotes page to Escuadra y Compas 216');
         OpenGraph::setTitle('Nosotros');
-        OpenGraph::setUrl('https://vitamedica.cl/nosotros');
+        OpenGraph::setUrl('https://escuadraycompas.cl/nosotros');
         OpenGraph::addProperty('type', 'about us');
 
         Twitter::setTitle('Nosotros');
@@ -162,9 +162,9 @@ class HomeController extends Controller
         ## Or
 
         SEO::setTitle('Nosotros');
-        SEO::setDescription('About us page to Vitamedica');
-        SEO::opengraph()->setUrl('https://vitamedica.cl/nosotros');
-        SEO::setCanonical('https://vitamedica.cl');
+        SEO::setDescription('About us page to Escuadra y Compas 216');
+        SEO::opengraph()->setUrl('https://escuadraycompas.cl/nosotros');
+        SEO::setCanonical('https://escuadraycompas.cl');
         SEO::opengraph()->addProperty('type', 'about us');
         SEO::twitter()->setSite('@jcesaravila');    
 
@@ -186,9 +186,9 @@ class HomeController extends Controller
     public function requirements(){
 
         SEO::setTitle('Requisitos');
-        SEO::setDescription('Requirements page to Vitamedica');
-        SEO::opengraph()->setUrl('https://vitamedica.cl/requisitos');
-        SEO::setCanonical('https://vitamedica.cl');
+        SEO::setDescription('Requirements page to Escuadra y Compas 216');
+        SEO::opengraph()->setUrl('https://escuadraycompas.cl/requisitos');
+        SEO::setCanonical('https://escuadraycompas.cl');
         SEO::opengraph()->addProperty('type', 'requirements');
         SEO::twitter()->setSite('@jcesaravila');    
 
@@ -222,9 +222,9 @@ class HomeController extends Controller
     public function agreement(){
 
         SEO::setTitle('Convenios');
-        SEO::setDescription('Agreements page to Vitamedica');
-        SEO::opengraph()->setUrl('https://vitamedica.cl/convenios');
-        SEO::setCanonical('https://vitamedica.cl');
+        SEO::setDescription('Agreements page to Escuadra y Compas 216');
+        SEO::opengraph()->setUrl('https://escuadraycompas.cl/convenios');
+        SEO::setCanonical('https://escuadraycompas.cl');
         SEO::opengraph()->addProperty('type', 'agreements');
         SEO::twitter()->setSite('@jcesaravila'); 
 
@@ -236,9 +236,9 @@ class HomeController extends Controller
     public function entities(){
 
         SEO::setTitle('Entidades');
-        SEO::setDescription('Entities page to Vitamedica');
-        SEO::opengraph()->setUrl('https://vitamedica.cl/entidades');
-        SEO::setCanonical('https://vitamedica.cl');
+        SEO::setDescription('Entities page to Escuadra y Compas 216');
+        SEO::opengraph()->setUrl('https://escuadraycompas.cl/entidades');
+        SEO::setCanonical('https://escuadraycompas.cl');
         SEO::opengraph()->addProperty('type', 'entities');
         SEO::twitter()->setSite('@jcesaravila'); 
 
@@ -250,9 +250,9 @@ class HomeController extends Controller
     public function kinesiologist(){
         
         SEO::setTitle('Kinesiología');
-        SEO::setDescription('Kinesiologist page to Vitamedica');
-        SEO::opengraph()->setUrl('https://vitamedica.cl/kinesiologia');
-        SEO::setCanonical('https://vitamedica.cl');
+        SEO::setDescription('Kinesiologist page to Escuadra y Compas 216');
+        SEO::opengraph()->setUrl('https://escuadraycompas.cl/kinesiologia');
+        SEO::setCanonical('https://escuadraycompas.cl');
         SEO::opengraph()->addProperty('type', 'kinesiologist');
         SEO::twitter()->setSite('@jcesaravila');      
 
@@ -268,9 +268,9 @@ class HomeController extends Controller
     public function kinesiologist_areas(){
 
         SEO::setTitle('Areas');
-        SEO::setDescription('Areas page to Vitamedica');
-        SEO::opengraph()->setUrl('https://vitamedica.cl/kinesiologia-areas');
-        SEO::setCanonical('https://vitamedica.cl');
+        SEO::setDescription('Areas page to Escuadra y Compas 216');
+        SEO::opengraph()->setUrl('https://escuadraycompas.cl/kinesiologia-areas');
+        SEO::setCanonical('https://escuadraycompas.cl');
         SEO::opengraph()->addProperty('type', 'areas');
         SEO::twitter()->setSite('@jcesaravila'); 
 
@@ -286,9 +286,9 @@ class HomeController extends Controller
     public function information(){
 
         SEO::setTitle('Información');
-        SEO::setDescription('Information page to Vitamedica');
-        SEO::opengraph()->setUrl('https://vitamedica.cl/informacion-util');
-        SEO::setCanonical('https://vitamedica.cl');
+        SEO::setDescription('Information page to Escuadra y Compas 216');
+        SEO::opengraph()->setUrl('https://escuadraycompas.cl/informacion-util');
+        SEO::setCanonical('https://escuadraycompas.cl');
         SEO::opengraph()->addProperty('type', 'information');
         SEO::twitter()->setSite('@jcesaravila');         
 
@@ -304,9 +304,9 @@ class HomeController extends Controller
     public function symptoms(){
 
         SEO::setTitle('Síntomas');
-        SEO::setDescription('Symptoms page to Vitamedica');
-        SEO::opengraph()->setUrl('https://vitamedica.cl/sintomas');
-        SEO::setCanonical('https://vitamedica.cl');
+        SEO::setDescription('Symptoms page to Escuadra y Compas 216');
+        SEO::opengraph()->setUrl('https://escuadraycompas.cl/sintomas');
+        SEO::setCanonical('https://escuadraycompas.cl');
         SEO::opengraph()->addProperty('type', 'symptoms');
         SEO::twitter()->setSite('@jcesaravila'); 
 
@@ -322,9 +322,9 @@ class HomeController extends Controller
     public function videos(){
 
         SEO::setTitle('Videos');
-        SEO::setDescription('Videos page to Vitamedica');
-        SEO::opengraph()->setUrl('https://vitamedica.cl/videos');
-        SEO::setCanonical('https://vitamedica.cl');
+        SEO::setDescription('Videos page to Escuadra y Compas 216');
+        SEO::opengraph()->setUrl('https://escuadraycompas.cl/videos');
+        SEO::setCanonical('https://escuadraycompas.cl');
         SEO::opengraph()->addProperty('type', 'videos');
         SEO::twitter()->setSite('@jcesaravila'); 
 

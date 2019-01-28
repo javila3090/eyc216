@@ -47,7 +47,6 @@
                     <tr>
                       <th>Título</th>
                       <th>Subtítulo</th>
-                      <th>Contenido</th>
                       <th>Imagen</th>
                       <th>Tipo</th>
                       <th>Opciones</th>
@@ -58,7 +57,7 @@
                     <tr>
                       <td>{{$v->title}}</td>
                       <td>{{$v->subtitle}}</td>
-                      <td>{!!$v->content!!}</td>
+
                       <td>{{$v->image}}</td>
                       <td>{{$v->type->name}}</td>
                       <td>
