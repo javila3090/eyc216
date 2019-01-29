@@ -19,6 +19,7 @@
     <!-- Core Stylesheet -->
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" href="{{asset('css/datepicker3.css')}}">
+    <link href="{{asset('css/sweetalert.css')}}" rel="stylesheet" media="screen">
 
 </head>
 
@@ -73,6 +74,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
     <!-- Bootstrap js -->
     <script src="{{asset('js/bootstrap/bootstrap.min.js')}}"></script>
+
     <script src="{{asset('js/bootstrap-datepicker.js')}}"></script>
     <!-- All Plugins js -->
     <script src="{{asset('js/plugins/plugins.js')}}"></script>
@@ -82,6 +84,11 @@
     <script src="{{asset('js/wow.min.js')}}"></script>
 
     <script src="{{asset('js/contactform.js')}}"></script>
+
+    <script src="{{asset('js/sweetalert.min.js')}}"></script>
+
+    <script src="{{asset('js/custom.js')}}"></script>
+
     <script type="text/javascript">
 
     </script>

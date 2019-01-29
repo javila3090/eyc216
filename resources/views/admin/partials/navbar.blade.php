@@ -9,6 +9,9 @@
             <a href="{{url('/admin')}}" class="nav-link"><i class="nav-icon fa fa-home"></i>  Inicio</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block desktop">
+            <a href="{{url('/admin/messages')}}" class="nav-link"><i class="nav-icon fa fa-envelope"></i>  Mensajes @if(Session::has('unread_messages')) <b>({{ Session::get('unread_messages')}})</b> @endif</a>
+        </li>
+        <li class="nav-item d-none d-sm-inline-block desktop">
             <a href="{{url('/')}}" class="nav-link"><i class="nav-icon fa fa-external-link-square"></i>  Ir al sitio web</a>
         </li>
     </ul>

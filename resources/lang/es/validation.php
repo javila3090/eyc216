@@ -81,7 +81,7 @@ return [
         'string'  => 'El :attribute may not be greater than :max characters.',
         'array'   => 'El :attribute may not have more than :max items.',
     ],
-    'mimes'                => 'La imagen de la receta u orden médica debe ser de tipo: :values.',
+    'mimes'                => 'Los tipos de archivos aceptados son: :values.',
     'mimetypes'            => 'El :attribute debe ser a file of type: :values.',
     'min'                  => [
         'numeric' => 'El :attribute debe ser at least :min.',

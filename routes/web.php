@@ -31,7 +31,9 @@ Route::get('kinesiologia-areas', 'HomeController@kinesiologist_areas')->name('ki
 
 Route::get('informacion-util', 'HomeController@information')->name('information');
 
-Route::get('sintomas', 'HomeController@symptoms')->name('symptoms');
+Route::get('grandes-masones-ingleses', 'HomeController@biggerEnglishMasons')->name('bigger.masons');
+
+Route::get('grandes-masones-historia', 'HomeController@biggerHistoryMasons')->name('bigger.history.masons');
 
 Route::get('videos', 'HomeController@videos')->name('videos');
 
@@ -114,7 +116,11 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
 
 });
 
-Route::get('miembros/dashboard','MemberController@index')->name('members.dashboard')->middleware('member');
+Route::get('miembros','MemberController@index')->name('members.dashboard')->middleware('member');
+Route::get('miembros/upload/{type}','FileController@create')->name('members.upload.form')->middleware('member');
+Route::get('miembros/delete/file/{id}','FileController@destroy')->name('members.delete.file')->middleware('member');
+Route::post('miembros/upload','FileController@store')->name('members.upload.file')->middleware('member');
+Route::get('miembros/descargar/{id}','FileController@download')->name('file.download')->middleware('member');
 Route::get('miembros/ingresar','Members\LoginController@showLoginForm')->name('members.login');
 Route::post('miembros/ingresar','Members\LoginController@login');
 Route::post('members-password/email','Members\ForgotPasswordController@sendResetLinkEmail')->name('members.password.email');

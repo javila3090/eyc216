@@ -34,8 +34,8 @@
                                     <li><a href="{{route('page',5)}}">Fundadores de la Gran Logia de Inglaterra</a></li>
                                     <li><a href="{{route('page',13)}}">Masonería Inglesa en el mundo</a></li>
                                     <li><a href="{{route('page',15)}}">Masonería Inglesa en Chile</a></li>
-                                    <li><a href="#">Masones destacados ingleses</a></li>
-                                    <li><a href="#">Grandes masones de la historia</a></li>
+                                    <li><a href="{{route('bigger.masons')}}">Masones destacados ingleses</a></li>
+                                    <li><a href="{{route('bigger.history.masons')}}">Grandes masones de la historia</a></li>
                                 </ul>
                             </li>
                             <li><a href="#">Rito de York</a>

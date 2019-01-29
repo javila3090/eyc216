@@ -22,7 +22,7 @@
         <div class="row">
             <!-- Contact Form Area -->
             <div class="col-12 col-lg-8 offset-lg-2">
-                <h5 class="text-center">Escríbenos y le responderemos a la mayor brevedad posible.</h5>
+                <h5 class="text-center">Escríbenos y responderemos a la mayor brevedad posible.</h5>
                 <br>
                 <div class="contact-form-area mb-100">
                     <div id="sendmessage">
@@ -46,9 +46,6 @@
                             <input type="text" class="form-control" name="subject" id="subject" placeholder="Asunto" data-rule="minlen:4" data-msg="Por favor ingrese al menos 8 carácteres de asunto" />
                             <div class="validation"></div>
                         </div>
-                        <div class="form-group">
-                            <input class="form-control datepicker" name="contact_date" placeholder="¿Cuando desea ser contactado?" autocomplete="off">
-                        </div>                  
                         <div class="form-group">
                             <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Por favor ingrese su mensaje" placeholder="Mensaje"></textarea>
                             <div class="validation"></div>

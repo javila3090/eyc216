@@ -58,6 +58,20 @@ class HomeController extends Controller
         return view('welcome',compact('homeBanners','aboutUs','servicesBanners','services','companyInfo','contact','gallery','galleryBanners','secondary','secondaryBanner','clients','clientBanners','team','whyus','whyusBanners'));
     }
 
+    public function biggerEnglishMasons(){
+
+        $data = Banner::where('banner_type_id',7)->get();
+
+        return view('masones-ing',compact('data'));
+    }
+
+    public function biggerHistoryMasons(){
+
+        $data = Banner::where('banner_type_id',8)->get();
+
+        return view('masones',compact('data'));
+    }
+
     public function contact(){
 
         SEOMeta::setTitle('Contacto');
