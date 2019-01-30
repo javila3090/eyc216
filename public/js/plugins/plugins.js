@@ -114,7 +114,7 @@ $(document).ready(function(){
     
     $('.datepicker').datepicker({
         format: 'yyyy-mm-dd',
-        startDate: date,
+        endDate: date,
         ignoreReadonly: true,
         language: 'es',
         autoclose: true,

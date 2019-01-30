@@ -25,9 +25,7 @@
                                 <div class="col-12 col-md-3 col-lg-3">
                                     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                                         <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true"><b>Secretaría</b></a>
-                                        @if(Auth::guard('members')->user()->hasRole('admin') || Auth::guard('members')->user()->hasRole('vigilant'))
-                                            <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false"><b>Vigilantes</b></a>
-                                        @endif
+                                        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false"><b>Vigilantes</b></a>
                                         <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false"><b>Calendario</b></a>
                                         <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false"><b>Planchas</b></a>
                                         <a class="nav-link" id="v-pills-lections-tab" data-toggle="pill" href="#v-pills-lections" role="tab" aria-controls="v-pills-lections" aria-selected="false"><b>Lecciones</b></a>
@@ -43,7 +41,7 @@
                                             <hr>
                                             <h6>Comunicados oficiales de Escuadra y Compás 216</h6>
                                             <br>
-                                            @if(Auth::guard('members')->user()->hasRole('admin'))
+                                            @if(Auth::guard('members')->user()->hasRole('admin') || Auth::guard('members')->user()->hasRole('secretary'))
                                                 <a class="cryptos-btn btn" href="{{route('members.upload.form',1)}}">Subir archivo</a>
                                                 <br>
                                                 <br>
@@ -67,7 +65,7 @@
                                                                 <td>
                                                                     <a href="{{ route('file.download', $item->id) }}" class="btn btn-primary btn-sm" title="Descargar"><i class="fa fa-download"></i></a>
                                                                     @if(Auth::guard('members')->user()->id==$item->user_id || Auth::guard('members')->user()->hasRole('admin'))
-                                                                        <button data-id="{{$item->id}}" class="btn btn-danger btn-sm delete-file" title="Eliminar "><i class="fa fa-trash"></i></button
+                                                                        <button data-id="{{$item->id}}" class="btn btn-danger btn-sm delete-file" title="Eliminar "><i class="fa fa-trash"></i></button>
                                                                     @endif
                                                                 </td>
                                                             </tr>
@@ -83,7 +81,7 @@
                                         <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                                             <h5>Documentos de Vigilantes</h5>
                                             <hr>
-                                            @if(Auth::guard('members')->user()->hasRole('admin') || Auth::guard('members')->user()->hasRole('vigilant'))
+                                            @if(Auth::guard('members')->user()->hasRole('admin') || Auth::guard('members')->user()->hasRole('vigilant_1') || Auth::guard('members')->user()->hasRole('vigilant_2') || Auth::guard('members')->user()->hasRole('secretary'))
                                                 <a class="cryptos-btn btn" href="{{route('members.upload.form',2)}}">Subir archivo</a>
                                                 <br>
                                                 <br>

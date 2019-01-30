@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers\Members;
 
+use App\CompanyInfo;
+use App\Member;
+use App\MemberRole;
+use App\Role;
 use App\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -33,8 +38,20 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest:members');
+        $this->middleware('member');
     }
+
+    /**
+     * Show the application's register form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showRegisterForm()
+    {
+        $companyInfo = CompanyInfo::orderBy('created_at', 'desc')->first();
+        return view('members.register',compact('companyInfo'));
+    }
+
     /**
      * Get a validator for an incoming registration request.
      *
@@ -45,7 +62,7 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
+            'email' => 'required|string|email|max:255|unique:members',
             'password' => 'required|string|min:6|confirmed',
         ]);
     }
@@ -55,18 +72,49 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data)
+    protected function create(Request $request)
     {
-        $user = User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
 
-        $user
-            ->roles()
-            ->attach(Role::where('name', 'user')->first());
+        $rules = array(
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:members',
+            'password' => 'required|string|min:6|confirmed',
+        );
 
-        return $user;
+        $validator = Validator::make($request->all(), $rules);
+
+        if ($validator->fails()) {
+
+            $messages = $validator->messages();
+            return redirect('/miembros/registro')->withErrors($messages);
+
+        }else{
+
+            if($request->level==1 || $request->level==6){
+                $level = 1;
+            }elseif($request->level==2 || $request->level==4 || $request->level==5 ){
+                $level = 2;
+            }else{
+                $level = 3;
+            }
+
+            $user = new Member();
+            $user->name = $request->name;
+            $user->email = $request->email;
+            $user->birthdate = $request->birthdate;
+            $user->level = $level;
+            $user->password = Hash::make($request->password);
+
+            $user->save();
+
+            $role = new MemberRole();
+            $role->user_id=$user->id;
+            $role->role_id=$request->level;
+
+            $role->save();
+        }
+
+        return redirect('/miembros/registro')->with('message', '¡Registro guardado con éxito!');
+
     }
 }

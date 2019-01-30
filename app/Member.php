@@ -30,7 +30,7 @@ class Member extends Authenticatable
     public function roles()
     {
         return $this
-            ->belongsToMany('App\Role','member_role','id','id')
+            ->belongsToMany('App\Role','member_role','user_id','role_id')
             ->withTimestamps();
     }
 

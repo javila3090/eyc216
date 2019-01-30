@@ -116,11 +116,16 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
 
 });
 
-Route::get('miembros','MemberController@index')->name('members.dashboard')->middleware('member');
-Route::get('miembros/upload/{type}','FileController@create')->name('members.upload.form')->middleware('member');
-Route::get('miembros/delete/file/{id}','FileController@destroy')->name('members.delete.file')->middleware('member');
-Route::post('miembros/upload','FileController@store')->name('members.upload.file')->middleware('member');
-Route::get('miembros/descargar/{id}','FileController@download')->name('file.download')->middleware('member');
+Route::middleware(['member'])->group(function () {
+    Route::get('miembros','MemberController@index')->name('members.dashboard');
+    Route::get('miembros/upload/{type}','FileController@create')->name('members.upload.form');
+    Route::get('miembros/delete/file/{id}','FileController@destroy')->name('members.delete.file');
+    Route::post('miembros/upload','FileController@store')->name('members.upload.file');
+    Route::get('miembros/descargar/{id}','FileController@download')->name('file.download');
+    Route::get('miembros/registro','Members\RegisterController@showRegisterForm')->name('members.register');
+    Route::post('miembros/registro/guardar','Members\RegisterController@create')->name('members.store');
+});
+
 Route::get('miembros/ingresar','Members\LoginController@showLoginForm')->name('members.login');
 Route::post('miembros/ingresar','Members\LoginController@login');
 Route::post('members-password/email','Members\ForgotPasswordController@sendResetLinkEmail')->name('members.password.email');

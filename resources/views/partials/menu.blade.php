@@ -47,7 +47,7 @@
                             <li><a href="{{url('/noticias')}}">Noticias</a></li>
                             <li><a href="#">Canal masónico</a></li>
                             <li><a href="{{route('page',10)}}">Logia celestial</a></li>
-                            <li><a href="{{route('members.dashboard')}}">Miembros</a></li>
+                            <li><a href="{{route('members.dashboard')}}">Acceso a miembros</a></li>
                             <li><a href="{{route('contact')}}">Contacto</a></li>
                             @if(\Auth::user())
                                 <li><a href="{{url('/admin')}}">Admin</a></li>

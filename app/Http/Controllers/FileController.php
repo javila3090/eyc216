@@ -29,9 +29,14 @@ class FileController extends Controller
 
      */
 
-    public function create($type)
+    public function create(Request $request, $type)
 
     {
+        if($type==1){
+            \Auth::guard('members')->user()->authorizeRoles(['admin', 'secretary']);
+        }elseif($type==2){
+            \Auth::guard('members')->user()->authorizeRoles(['vigilant_1', 'vigilant_2']);
+        }
 
         return view('members.uploadFile',compact('type'));
 
@@ -70,6 +75,7 @@ class FileController extends Controller
             $file->name = $request->name;
             $file->description = $request->description;
             $file->type = $request->type;
+            $file->level = $request->level;
             $file->url = 'uploads/files/'.$data->getClientOriginalName();
             $file->user_id = \Auth::guard('members')->user()->id;
             $file->save();

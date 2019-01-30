@@ -38,6 +38,31 @@
                         <label for="author"><b>Descripción</b></label>
                         <textarea class="form-control" name="description"></textarea>
                     </div>
+                    @if(Auth::guard('members')->user()->hasRole('admin') || Auth::guard('members')->user()->hasRole('secretary'))
+                        <div class="form-group">
+                            <label for="author"><b>Nivel</b></label>
+                            <select name="level" class="form-control">
+                                <option value="1">Secretario</option>
+                                <option value="2">Compañeros</option>
+                                <option value="3">Aprendices</option>
+                                <option value="4">Todos</option>
+                            </select>
+                        </div>
+                    @elseif (Auth::guard('members')->user()->hasRole('vigilant_1'))
+                        <div class="form-group">
+                            <label for="author"><b>Nivel</b></label>
+                            <select name="level" class="form-control" readonly>
+                                <option value="2">Miembros nivel 2</option>
+                            </select>
+                        </div>
+                    @elseif (Auth::guard('members')->user()->hasRole('vigilant_2'))
+                        <div class="form-group">
+                            <label for="author"><b>Nivel</b></label>
+                            <select name="level" class="form-control" readonly>
+                                <option value="1">Miembros nivel 1</option>
+                            </select>
+                        </div>
+                    @endif
                     <div class="form-group">
                         <label for="author"><b>Archivo</b></label>
                         <input type="file" class="form-control" name="filename" required/>
