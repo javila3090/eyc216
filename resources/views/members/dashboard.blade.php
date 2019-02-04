@@ -30,6 +30,7 @@
                                         <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false"><b>Planchas</b></a>
                                         <a class="nav-link" id="v-pills-lections-tab" data-toggle="pill" href="#v-pills-lections" role="tab" aria-controls="v-pills-lections" aria-selected="false"><b>Lecciones</b></a>
                                         <a class="nav-link" id="v-pills-library-tab" data-toggle="pill" href="#v-pills-library" role="tab" aria-controls="v-pills-library" aria-selected="false"><b>Biblioteca virtual</b></a>
+                                        <a class="nav-link" id="v-pills-msg-tab" data-toggle="pill" href="#v-pills-msg" role="tab" aria-controls="v-pills-msg" aria-selected="false"><b>Mensajes</b></a>
                                     </div>
                                     <br>
                                     <br>
@@ -191,6 +192,41 @@
                                                                 @if(Auth::guard('members')->user()->id==$item->user_id || Auth::guard('members')->user()->hasRole('admin'))
                                                                     <button data-id="{{$item->id}}" class="btn btn-danger btn-sm delete-file" title="Eliminar "><i class="fa fa-trash"></i></button
                                                                 @endif
+                                                            </td>
+                                                        </tr>
+                                                    @empty
+                                                        <tr>
+                                                            <td colspan="4">No hay archivos para mostrar</td>
+                                                        </tr>
+                                                    @endforelse
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="v-pills-msg" role="tabpanel" aria-labelledby="v-pills-msg-tab">
+                                            <h5>Mensajes</h5>
+                                            <hr>
+                                            <a class="cryptos-btn btn" href="{{route('members.message')}}">Nuevo mensaje</a>
+                                            <br>
+                                            <br>
+                                            <div class="table-responsive">
+                                                <table id="example1" class="table table-bordered table-striped text-center">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>Nombre</th>
+                                                        <th>Asunto</th>
+                                                        <th>Recibido</th>
+                                                        <th>Opciones</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    @forelse($messages as $item)
+                                                        <tr>
+                                                            <td>{{$item->member->name}}</td>
+                                                            <td>{{$item->subject}}</td>
+                                                            <td>{{$item->created_at}}</td>
+                                                            <td>
+                                                                <a href="{{ route('members.message.detail', $item->id) }}" class="btn btn-primary btn-sm" title="Descargar"><i class="fa fa-envelope"></i></a>
                                                             </td>
                                                         </tr>
                                                     @empty

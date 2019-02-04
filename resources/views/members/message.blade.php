@@ -4,7 +4,7 @@
     <br>
     <br>
     <br>
-    <div class="login-box col-md-4 offset-md-4 mt-100" >
+    <div class="login-box col-12 col-md-6 offset-md-3 mt-100" >
     @if (count($errors) > 0)
         @include('members.partials.errors')
     @endif
@@ -15,34 +15,20 @@
             <div class="card-body login-card-body ">
                 <p class="login-box-msg" style="text-transform: uppercase;">
                     <b>
-                        @if($type == 1)
-                            Área de Secretaría - Subir Archivo
-                        @elseif($type==2)
-                            Área de Vigilantes - Subir Archivo
-                        @else
-                            Biblioteca virtual - Subir Archivo
-                        @endif
+                        Nuevo mensaje
                     </b>
                 </p>
-
-                <div class="contact-form-area mb-100">
+                <hr>
+                <div class="contact-form-area">
                     <div id="sendmessage">
                         <div class="alert alert-success">
                             <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
-                            <b>¡Gracias por escribirnos!</b> Su mensaje será respondido a la mayor brevedad posible.
+                            <b>Su mensaje fue enviado con éxito</b>
                         </div>
                     </div>
                     <div id="errormessage"></div>
-                    <form action="" method="post" class="form-horizontal contactForm" role="form">
+                    <form action="" method="post" class="form-horizontal messageForm" role="form">
                         {{ csrf_field() }}
-                        <div class="form-group">
-                            <input type="text" name="name" class="form-control" id="name" placeholder="Su nombre" data-rule="minlen:4" data-msg="Por favor ingrese al menos 4 carácteres" />
-                            <div class="validation"></div>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control" name="email" id="email" placeholder="Su email" data-rule="email" data-msg="Por favor ingrese un correo electrónico válido" />
-                            <div class="validation"></div>
-                        </div>
                         <div class="form-group">
                             <input type="text" class="form-control" name="subject" id="subject" placeholder="Asunto" data-rule="minlen:4" data-msg="Por favor ingrese al menos 8 carácteres de asunto" />
                             <div class="validation"></div>
@@ -60,7 +46,7 @@
             </div>
             <hr>
             <div class="form-group text-center">
-            <a class="btn btn-danger" href="{{route('members.dashboard')}}">Volver</a>
+                <a class="btn btn-danger" href="{{route('members.dashboard')}}">Volver</a>
             </div>
             <!-- /.login-card-body -->
         </div>

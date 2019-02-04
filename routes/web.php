@@ -118,6 +118,9 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
 
 Route::middleware(['member'])->group(function () {
     Route::get('miembros','MemberController@index')->name('members.dashboard');
+    Route::get('miembros/mensaje','MessageController@message')->name('members.message');
+    Route::post('miembros/mensaje','MessageController@message_store')->name('members.message.store');
+    Route::get('miembros/mensaje/{id}','MessageController@message_details')->name('members.message.detail');
     Route::get('miembros/upload/{type}','FileController@create')->name('members.upload.form');
     Route::get('miembros/delete/file/{id}','FileController@destroy')->name('members.delete.file');
     Route::post('miembros/upload','FileController@store')->name('members.upload.file');
