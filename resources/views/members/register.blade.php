@@ -71,12 +71,12 @@
                                     <div class="col-md-6">
                                         <select name="level" class="form-control" required>
                                             <option value="">Seleccione una opción</option>
-                                            <option value="1">Maestro</option>
+                                            <option value="3">Nivel 1</option>
+                                            <option value="2">Nivel 2</option>
+                                            <option value="1">Nivel 3</option>
                                             <option value="6">Secretario</option>
-                                            <option value="2">Compañero</option>
-                                            <option value="4">Vigilante 1</option>
-                                            <option value="5">Vigilante 2</option>
-                                            <option value="3">Aprendíz</option>
+                                            <option value="4">Primer Vigilante</option>
+                                            <option value="5">Segundo Vigilante</option>
                                         </select>
                                     </div>
                                 </div>

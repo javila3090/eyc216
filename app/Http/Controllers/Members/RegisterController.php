@@ -90,12 +90,12 @@ class RegisterController extends Controller
 
         }else{
 
-            if($request->level==1 || $request->level==6){
-                $level = 1;
-            }elseif($request->level==2 || $request->level==4 || $request->level==5 ){
+            if($request->level==1 || $request->level==6 || $request->level==4 || $request->level==5 ){
+                $level = 3;
+            }elseif($request->level==2){
                 $level = 2;
             }else{
-                $level = 3;
+                $level = 1;
             }
 
             $user = new Member();

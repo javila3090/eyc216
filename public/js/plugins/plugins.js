@@ -140,5 +140,28 @@ $(document).ready(function(){
             }
         }]
     });
+
+    $('#calendar').fullCalendar({
+        header: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'month,agendaWeek,agendaDay,listWeek'
+        },
+        buttonIcons: true, // show the prev/next text
+        weekNumbers: false,
+        navLinks: true, // can click day/week names to navigate views
+        editable: true,
+        eventLimit: true, // allow "more" link when too many events
+        locale: 'es',
+        events: {
+            url: '/api/get/calendar',
+            type: 'GET',
+            error: function() {
+                alert('there was an error while fetching events!');
+            },
+            color: 'blue',   // a non-ajax option
+            textColor: 'black' // a non-ajax option
+        }
+    });
 });
 

@@ -122,6 +122,7 @@
                                         <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
                                             <h5>Calendario de actividades</h5>
                                             <hr>
+                                            <div id="calendar"></div>
                                         </div>
                                         <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
                                             <h5>Planchas</h5>

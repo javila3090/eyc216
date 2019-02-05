@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" href="{{asset('css/datepicker3.css')}}">
     <link href="{{asset('css/sweetalert.css')}}" rel="stylesheet" media="screen">
+    <link href="{{asset('css/fullcalendar.min.css')}}" rel="stylesheet" media="screen">
+    <link href="{{asset('css/fullcalendar.print.min.css')}}" rel="stylesheet" media="screen">
 
 </head>
 
@@ -88,6 +90,14 @@
     <script src="{{asset('js/sweetalert.min.js')}}"></script>
 
     <script src="{{asset('js/custom.js')}}"></script>
+
+    <script src="{{asset('js/plugins/moment.min.js')}}"></script>
+
+    <script src="{{asset('js/plugins/fullcalendar.min.js')}}"></script>
+
+    <script src="{{asset('js/plugins/gcal.min.js')}}"></script>
+
+    <script src="{{asset('js/plugins/locale-all.js')}}"></script>
 
     <script type="text/javascript">
 
