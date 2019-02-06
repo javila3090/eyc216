@@ -34,7 +34,8 @@ class MemberController extends Controller
             $files_vig = File::where('type',2)->get();
             $files_lib = File::where('type',3)->get();
             $files_lec = File::where('type',4)->get();
-            $messages = Missive::where('level',4)->get();
+            $messages = Missive::where('level',\Auth::guard('members')->user()->level)
+                ->orWhere('level',4)->get();
         }else{
             $files_sec=File::where('type', '=', 1)
                 ->where(function ($query) {

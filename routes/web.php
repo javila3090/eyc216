@@ -128,6 +128,10 @@ Route::middleware(['member'])->group(function () {
     Route::get('miembros/registro','Members\RegisterController@showRegisterForm')->name('members.register');
     Route::post('miembros/registro/guardar','Members\RegisterController@create')->name('members.store');
     Route::get('miembros/get/calendar', 'CalendarController@index');
+    Route::get('miembros/evento', 'CalendarController@create')->name('members.create.event');
+    Route::get('miembros/evento/{id}', 'CalendarController@show')->name('members.show.event');
+    Route::get('miembros/evento/delete/{id}', 'CalendarController@destroy')->name('members.delete.event');
+    Route::post('miembros/store/calendar', 'CalendarController@store')->name('members.store.event');
 });
 
 Route::get('miembros/ingresar','Members\LoginController@showLoginForm')->name('members.login');

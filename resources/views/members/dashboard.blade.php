@@ -31,6 +31,10 @@
                                         <a class="nav-link" id="v-pills-lections-tab" data-toggle="pill" href="#v-pills-lections" role="tab" aria-controls="v-pills-lections" aria-selected="false"><b>Lecciones</b></a>
                                         <a class="nav-link" id="v-pills-library-tab" data-toggle="pill" href="#v-pills-library" role="tab" aria-controls="v-pills-library" aria-selected="false"><b>Biblioteca virtual</b></a>
                                         <a class="nav-link" id="v-pills-msg-tab" data-toggle="pill" href="#v-pills-msg" role="tab" aria-controls="v-pills-msg" aria-selected="false"><b>Mensajes</b></a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                        <a class="nav-link" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" role="tab" aria-controls="v-pills-msg" aria-selected="false"><b>Salir ({{\Auth::guard('members')->user()->name}})</b></a>
                                     </div>
                                     <br>
                                     <br>
@@ -38,6 +42,11 @@
                                 <div class="col-12 col-md-9 col-lg-9">
                                     <div class="tab-content" id="v-pills-tabContent">
                                         <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                                            @if (count($errors) > 0)
+                                                @include('members.partials.errors')
+                                            @endif
+
+                                            @include('members.partials.messages')
                                             <h5>Información de Secretaría</h5>
                                             <hr>
                                             <h6>Comunicados oficiales de Escuadra y Compás 216</h6>
@@ -122,7 +131,16 @@
                                         <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
                                             <h5>Calendario de actividades</h5>
                                             <hr>
+                                            @if(Auth::guard('members')->user()->hasRole('admin') || Auth::guard('members')->user()->hasRole('vigilant_1') || Auth::guard('members')->user()->hasRole('vigilant_2') || Auth::guard('members')->user()->hasRole('secretary'))
+                                            <a class="cryptos-btn btn" href="{{route('members.create.event')}}">Crear evento</a>
+                                            <br>
+                                            @endif
                                             <div id="calendar"></div>
+                                            <br>
+                                            <div class="text-center">
+                                                <button id='prev' class="btn btn-info btn-xs">Anterior</button>
+                                                <button id='next' class="btn btn-info btn-xs">Siguiente</button>
+                                            </div>
                                         </div>
                                         <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
                                             <h5>Planchas</h5>
@@ -131,9 +149,11 @@
                                         <div class="tab-pane fade" id="v-pills-lections" role="tabpanel" aria-labelledby="v-pills-settings-tab">
                                             <h5>Lecciones</h5>
                                             <hr>
-                                            <a class="cryptos-btn btn" href="{{route('members.upload.form',3)}}">Subir archivo</a>
-                                            <br>
-                                            <br>
+                                            @if(Auth::guard('members')->user()->hasRole('admin') || Auth::guard('members')->user()->hasRole('vigilant_1') || Auth::guard('members')->user()->hasRole('vigilant_2') || Auth::guard('members')->user()->hasRole('secretary'))
+                                                <a class="cryptos-btn btn" href="{{route('members.upload.form',4)}}">Subir archivo</a>
+                                                <br>
+                                                <br>
+                                            @endif
                                             <div class="table-responsive">
                                                 <table id="example1" class="table table-bordered table-striped text-center">
                                                     <thead>
