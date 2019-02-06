@@ -15,8 +15,12 @@ class CreateCalendarsTable extends Migration
     {
         Schema::create('calendars', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('event',200);
-            $table->date('date');
+            $table->string('title',100);
+            $table->date('start');
+            $table->date('end');
+            $table->integer('level');
+            $table->unsignedInteger('member_id');
+            $table->foreign('member_id')->references('id')->on('members');
             $table->timestamps();
         });
     }

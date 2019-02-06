@@ -127,6 +127,7 @@ Route::middleware(['member'])->group(function () {
     Route::get('miembros/descargar/{id}','FileController@download')->name('file.download');
     Route::get('miembros/registro','Members\RegisterController@showRegisterForm')->name('members.register');
     Route::post('miembros/registro/guardar','Members\RegisterController@create')->name('members.store');
+    Route::get('miembros/get/calendar', 'CalendarController@index');
 });
 
 Route::get('miembros/ingresar','Members\LoginController@showLoginForm')->name('members.login');

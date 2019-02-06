@@ -154,10 +154,10 @@ $(document).ready(function(){
         eventLimit: true, // allow "more" link when too many events
         locale: 'es',
         events: {
-            url: '/api/get/calendar',
+            url: '/miembros/get/calendar',
             type: 'GET',
             error: function() {
-                alert('there was an error while fetching events!');
+                console.log('there was an error while fetching events!');
             },
             color: 'blue',   // a non-ajax option
             textColor: 'black' // a non-ajax option
