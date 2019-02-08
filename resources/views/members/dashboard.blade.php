@@ -31,6 +31,10 @@
                                         <a class="nav-link" id="v-pills-lections-tab" data-toggle="pill" href="#v-pills-lections" role="tab" aria-controls="v-pills-lections" aria-selected="false"><b>Lecciones</b></a>
                                         <a class="nav-link" id="v-pills-library-tab" data-toggle="pill" href="#v-pills-library" role="tab" aria-controls="v-pills-library" aria-selected="false"><b>Biblioteca virtual</b></a>
                                         <a class="nav-link" id="v-pills-msg-tab" data-toggle="pill" href="#v-pills-msg" role="tab" aria-controls="v-pills-msg" aria-selected="false"><b>Mensajes</b></a>
+                                        @if(Auth::guard('members')->user()->hasRole('admin') || Auth::guard('members')->user()->hasRole('secretary'))
+                                            <a class="nav-link" href="{{route('members.register')}}" role="tab" aria-controls="v-pills-msg" aria-selected="false"><b>Crear usuario</b></a>
+                                        @endif
+                                        <a class="nav-link" href="{{route('members.form.update',Auth::guard('members')->user()->id)}}" role="tab" aria-controls="v-pills-msg" aria-selected="false"><b>Mis datos</b></a>
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
@@ -67,23 +71,23 @@
                                                     </tr>
                                                     </thead>
                                                     <tbody>
-                                                        @forelse($files_sec as $item)
-                                                            <tr>
-                                                                <td>{{$item->name}}</td>
-                                                                <td>{{$item->description}}</td>
-                                                                <td>{{$item->created_at}}</td>
-                                                                <td>
-                                                                    <a href="{{ route('file.download', $item->id) }}" class="btn btn-primary btn-sm" title="Descargar"><i class="fa fa-download"></i></a>
-                                                                    @if(Auth::guard('members')->user()->id==$item->user_id || Auth::guard('members')->user()->hasRole('admin'))
-                                                                        <button data-id="{{$item->id}}" class="btn btn-danger btn-sm delete-file" title="Eliminar "><i class="fa fa-trash"></i></button>
-                                                                    @endif
-                                                                </td>
-                                                            </tr>
-                                                        @empty
-                                                            <tr>
-                                                                <td colspan="4">No hay archivos para mostrar</td>
-                                                            </tr>
-                                                        @endforelse
+                                                    @forelse($files_sec as $item)
+                                                        <tr>
+                                                            <td>{{$item->name}}</td>
+                                                            <td>{{$item->description}}</td>
+                                                            <td>{{$item->created_at}}</td>
+                                                            <td>
+                                                                <a href="{{ route('file.download', $item->id) }}" class="btn btn-primary btn-sm" title="Descargar"><i class="fa fa-download"></i></a>
+                                                                @if(Auth::guard('members')->user()->id==$item->user_id || Auth::guard('members')->user()->hasRole('admin'))
+                                                                    <button data-id="{{$item->id}}" class="btn btn-danger btn-sm delete-file" title="Eliminar "><i class="fa fa-trash"></i></button>
+                                                                @endif
+                                                            </td>
+                                                        </tr>
+                                                    @empty
+                                                        <tr>
+                                                            <td colspan="4">No hay archivos para mostrar</td>
+                                                        </tr>
+                                                    @endforelse
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -107,23 +111,23 @@
                                                     </tr>
                                                     </thead>
                                                     <tbody>
-                                                        @forelse($files_vig as $item)
-                                                            <tr>
-                                                                <td>{{$item->name}}</td>
-                                                                <td>{{$item->description}}</td>
-                                                                <td>{{$item->created_at}}</td>
-                                                                <td>
-                                                                    <a href="{{ route('file.download', $item->id) }}" class="btn btn-primary btn-sm" title="Descargar"><i class="fa fa-download"></i></a>
-                                                                    @if(Auth::guard('members')->user()->id==$item->user_id || Auth::guard('members')->user()->hasRole('admin'))
-                                                                        <button data-id="{{$item->id}}" class="btn btn-danger btn-sm delete-file" title="Eliminar "><i class="fa fa-trash"></i></button
-                                                                    @endif
-                                                                </td>
-                                                            </tr>
-                                                        @empty
-                                                            <tr>
-                                                                <td colspan="4">No hay archivos para mostrar</td>
-                                                            </tr>
-                                                        @endforelse
+                                                    @forelse($files_vig as $item)
+                                                        <tr>
+                                                            <td>{{$item->name}}</td>
+                                                            <td>{{$item->description}}</td>
+                                                            <td>{{$item->created_at}}</td>
+                                                            <td>
+                                                                <a href="{{ route('file.download', $item->id) }}" class="btn btn-primary btn-sm" title="Descargar"><i class="fa fa-download"></i></a>
+                                                                @if(Auth::guard('members')->user()->id==$item->user_id || Auth::guard('members')->user()->hasRole('admin'))
+                                                                    <button data-id="{{$item->id}}" class="btn btn-danger btn-sm delete-file" title="Eliminar "><i class="fa fa-trash"></i></button
+                                                                @endif
+                                                            </td>
+                                                        </tr>
+                                                    @empty
+                                                        <tr>
+                                                            <td colspan="4">No hay archivos para mostrar</td>
+                                                        </tr>
+                                                    @endforelse
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -132,8 +136,8 @@
                                             <h5>Calendario de actividades</h5>
                                             <hr>
                                             @if(Auth::guard('members')->user()->hasRole('admin') || Auth::guard('members')->user()->hasRole('vigilant_1') || Auth::guard('members')->user()->hasRole('vigilant_2') || Auth::guard('members')->user()->hasRole('secretary'))
-                                            <a class="cryptos-btn btn" href="{{route('members.create.event')}}">Crear evento</a>
-                                            <br>
+                                                <a class="cryptos-btn btn" href="{{route('members.create.event')}}">Crear evento</a>
+                                                <br>
                                             @endif
                                             <div id="calendar"></div>
                                             <br>
@@ -145,6 +149,40 @@
                                         <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
                                             <h5>Planchas</h5>
                                             <hr>
+                                            <a class="cryptos-btn btn" href="{{route('members.upload.form',5)}}">Subir archivo</a>
+                                            <br>
+                                            <br>
+                                            <div class="table-responsive">
+                                                <table id="example1" class="table table-bordered table-striped text-center">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>Nombre</th>
+                                                        <th>Descripción</th>
+                                                        <th>Creado</th>
+                                                        <th>Opciones</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    @forelse($files_plan as $item)
+                                                        <tr>
+                                                            <td>{{$item->name}}</td>
+                                                            <td>{{$item->description}}</td>
+                                                            <td>{{$item->created_at}}</td>
+                                                            <td>
+                                                                <a href="{{ route('file.download', $item->id) }}" class="btn btn-primary btn-sm" title="Descargar"><i class="fa fa-download"></i></a>
+                                                                @if(Auth::guard('members')->user()->id==$item->user_id || Auth::guard('members')->user()->hasRole('admin'))
+                                                                    <button data-id="{{$item->id}}" class="btn btn-danger btn-sm delete-file" title="Eliminar "><i class="fa fa-trash"></i></button
+                                                                @endif
+                                                            </td>
+                                                        </tr>
+                                                    @empty
+                                                        <tr>
+                                                            <td colspan="4">No hay archivos para mostrar</td>
+                                                        </tr>
+                                                    @endforelse
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                         </div>
                                         <div class="tab-pane fade" id="v-pills-lections" role="tabpanel" aria-labelledby="v-pills-settings-tab">
                                             <h5>Lecciones</h5>

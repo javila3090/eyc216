@@ -19,8 +19,10 @@
                             Área de Secretaría - Subir Archivo
                         @elseif($type==2)
                             Área de Vigilantes - Subir Archivo
-                        @else
+                        @elseif($type==3)
                             Biblioteca virtual - Subir Archivo
+                        @else
+                            Planchas - Subir Archivo
                         @endif
                     </b>
                 </p>
@@ -38,29 +40,38 @@
                         <label for="author"><b>Descripción</b></label>
                         <textarea class="form-control" name="description"></textarea>
                     </div>
-                    @if(Auth::guard('members')->user()->hasRole('admin') || Auth::guard('members')->user()->hasRole('secretary'))
+                    @if($type == 1 || $type==2)
+                        @if(Auth::guard('members')->user()->hasRole('admin') || Auth::guard('members')->user()->hasRole('secretary'))
+                            <div class="form-group">
+                                <label for="author"><b>Enviar a</b></label>
+                                <select name="level" class="form-control" required>
+                                    <option value="">Elija un nivel</option>
+                                    <option value="1">Nivel 1</option>
+                                    <option value="2">Nivel 2</option>
+                                    <option value="3">Nivel 3</option>
+                                    <option value="4">Todos</option>
+                                </select>
+                            </div>
+                        @elseif (Auth::guard('members')->user()->hasRole('vigilant_1'))
+                            <div class="form-group">
+                                <label for="author"><b>Enviar a</b></label>
+                                <select name="level" class="form-control" readonly>
+                                    <option value="2">Miembros nivel 2</option>
+                                </select>
+                            </div>
+                        @elseif (Auth::guard('members')->user()->hasRole('vigilant_2'))
+                            <div class="form-group">
+                                <label for="author"><b>Enviar a</b></label>
+                                <select name="level" class="form-control" readonly>
+                                    <option value="1">Miembros nivel 1</option>
+                                </select>
+                            </div>
+                        @endif
+                    @else
                         <div class="form-group">
                             <label for="author"><b>Enviar a</b></label>
-                            <select name="level" class="form-control" required>
-                                <option value="">Elija un nivel</option>
-                                <option value="1">Nivel 1</option>
-                                <option value="2">Nivel 2</option>
-                                <option value="3">Nivel 3</option>
+                            <select name="level" class="form-control" readonly>
                                 <option value="4">Todos</option>
-                            </select>
-                        </div>
-                    @elseif (Auth::guard('members')->user()->hasRole('vigilant_1'))
-                        <div class="form-group">
-                            <label for="author"><b>Enviar a</b></label>
-                            <select name="level" class="form-control" readonly>
-                                <option value="2">Miembros nivel 2</option>
-                            </select>
-                        </div>
-                    @elseif (Auth::guard('members')->user()->hasRole('vigilant_2'))
-                        <div class="form-group">
-                            <label for="author"><b>Enviar a</b></label>
-                            <select name="level" class="form-control" readonly>
-                                <option value="1">Miembros nivel 1</option>
                             </select>
                         </div>
                     @endif

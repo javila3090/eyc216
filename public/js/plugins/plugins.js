@@ -188,7 +188,7 @@ $(document).ready(function(){
             url: '/miembros/get/calendar',
             type: 'GET',
             error: function() {
-                console.log('there was an error while fetching events!');
+                console.log('There was an error while fetching events!');
             },
             color: 'blue',   // a non-ajax option
             eventColor: 'blue',   // a non-ajax option

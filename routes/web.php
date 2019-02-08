@@ -126,6 +126,8 @@ Route::middleware(['member'])->group(function () {
     Route::post('miembros/upload','FileController@store')->name('members.upload.file');
     Route::get('miembros/descargar/{id}','FileController@download')->name('file.download');
     Route::get('miembros/registro','Members\RegisterController@showRegisterForm')->name('members.register');
+    Route::get('miembros/actualizar/{id}','MemberController@showUpdateForm')->name('members.form.update');
+    Route::post('miembros/actualizar/{id}','MemberController@update')->name('members.update');
     Route::post('miembros/registro/guardar','Members\RegisterController@create')->name('members.store');
     Route::get('miembros/get/calendar', 'CalendarController@index');
     Route::get('miembros/evento', 'CalendarController@create')->name('members.create.event');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Members;
 
+use App\Calendar;
 use App\CompanyInfo;
 use App\Member;
 use App\MemberRole;
@@ -48,6 +49,7 @@ class RegisterController extends Controller
      */
     public function showRegisterForm()
     {
+        \Auth::guard('members')->user()->authorizeRoles(['admin', 'secretary']);
         $companyInfo = CompanyInfo::orderBy('created_at', 'desc')->first();
         return view('members.register',compact('companyInfo'));
     }
@@ -112,6 +114,14 @@ class RegisterController extends Controller
             $role->role_id=$request->level;
 
             $role->save();
+
+            /*$calendar = new Calendar();
+            $calendar->title='Cumpleaños '.$user->name;
+            $calendar->start=$user->birthdate;
+            $calendar->level=4;
+            $calendar->member_id=$user->id;
+
+            $calendar->save();*/
         }
 
         return redirect('/miembros/registro')->with('message', '¡Registro guardado con éxito!');
