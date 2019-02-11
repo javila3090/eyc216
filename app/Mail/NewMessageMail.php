@@ -30,6 +30,6 @@ class NewMessageMail extends Mailable
      */
     public function build()
     {
-        return $this->from('info@vitamedica.cl')->view('emails.new_message', ['name'=>$this->name, 'email'=>$this->email,'message_user'=>$this->message_user] )->subject('Nuevo mensaje en Vitamedica');
+        return $this->from('contacto@escuadraycompas216.cl')->view('emails.new_message', ['name'=>$this->name, 'email'=>$this->email,'message_user'=>$this->message_user] )->subject('Nuevo mensaje en Escuadra y Compas 216');
     }
 }
