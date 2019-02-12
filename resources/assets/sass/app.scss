@@ -848,7 +848,7 @@ textarea:focus {
                 height: 90px;
             }
             .classynav ul li a {
-                font-size: 11px;
+                font-size: 12px;
                 font-weight: 600;
                 letter-spacing: 0.5px;
                 color: #fff;
@@ -866,9 +866,10 @@ textarea:focus {
         }
         .classynav ul li .dropdown li a,
         .classynav ul li .megamenu li a {
-            font-size: 11px;
+            font-size: 12px;
             background-color: $bg-default;
             border-bottom: 1px solid #fff;
+            box-shadow: 0 5px 70px rgba(0, 0, 0, 0.75);
             @media #{$breakpoint-md} {
                 background-color: #ddd;
                 color: $bg-default;
